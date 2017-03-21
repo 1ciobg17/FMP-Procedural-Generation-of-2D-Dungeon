@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class RoomCreation : MonoBehaviour {
 
+    //ADD OVERPOPLIMIT CHECK
+
     //room sizes
     public int width;
     public int height;
 
-    //a loose guideline to fill the room initially, percentage
+    //a loose guideline to fill the room, percentage only
     [Range(0,100)]
-    public int randomFillPercent;
+    public int changeToChange=50;
+    //cell death happens at lower neighbour limit
+    public int cellDeath;
+    //cell birth happens at X number of neighbours
+    public int cellBirth;
     //region size(groups of tiles of same value
     public int wallThreshHoldSize=5;
     public int floorThreshHoldSize=5;
+    //tile changing threshhold
+    public int tileThreshHold = 4;
     //the used gameobject prefab
     public GameObject tileContainer;//wall is 0, floor is 1
     //needed to change the sprite of the prefab
@@ -21,13 +29,9 @@ public class RoomCreation : MonoBehaviour {
     //the specific sprite for each tile type currently available
     public Sprite floor;
     public Sprite wall;
+    public Sprite connecter;
     //room array of tiles
     int[,] room;
-    //seed used to create a room
-    public string seed;
-    //the above can be used to add a manual seed or just use one randomly
-    public bool useRandomSeed;
-    //how many times will the room change until reaching a final result
     [Range(0,10)]
     public int smoothCount;
 
@@ -41,6 +45,44 @@ public class RoomCreation : MonoBehaviour {
         {
             tileX = x;
             tileY = y;
+        }
+    }
+
+   class Room {
+        public List<Position> tiles;
+        public List<Position> edgeTiles;
+        public List<Room> connectedRooms;
+        public int roomSize;
+
+        public Room() {
+        }
+
+        public Room(List<Position> roomTiles, int[,] map) {
+            tiles = roomTiles;
+            roomSize = tiles.Count;
+            connectedRooms = new List<Room>();
+
+            edgeTiles = new List<Position>();
+            foreach (Position tile in tiles) {
+                for (int x = tile.tileX-1; x <= tile.tileX+1; x++) {
+                    for (int y = tile.tileY-1; y <= tile.tileY+1; y++) {
+                        if (x == tile.tileX || y == tile.tileY) {
+                            if (map[x,y] == 1) {
+                                edgeTiles.Add(tile);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void ConnectRooms(Room roomA, Room roomB) {
+            roomA.connectedRooms.Add (roomB);
+            roomB.connectedRooms.Add (roomA);
+        }
+
+        public bool IsConnected(Room otherRoom) {
+            return connectedRooms.Contains(otherRoom);
         }
     }
 
@@ -72,28 +114,96 @@ public class RoomCreation : MonoBehaviour {
         //initialize the room
         room = new int[width, height];
         //fill the room with tiles
-        RandomFillRoom();
+        //RandomFillRoom();
+        RandomPercentFill();
 
 
         //start iterating with the current room
         for (int i = 0; i < smoothCount; i++)
         {
-            SmoothTiles();
+            //SmoothTiles();
+            UpgradedSmoothTiles();
         }
 
         //check for "regions"
         ProcessRoom();
 
-        //for (int i = 1; i < width - 1; i++)
-        //{
-        //    for (int j = 1; j < height - 1; j++)
-        //    {
-        //        CheckTileTypes(i, j);
-        //    }
-        //}
-
         //add graphical view to the room
          SetUpTile();
+    }
+
+    void ConnectClosestRooms(List<Room> allRooms)
+    {
+
+        int bestDistance = 0;
+        Position bestTileA = new Position();
+        Position bestTileB = new Position();
+        Room bestRoomA = new Room();
+        Room bestRoomB = new Room();
+        bool possibleConnectionFound = false;
+
+        foreach (Room roomA in allRooms)
+        {
+            possibleConnectionFound = false;
+
+            foreach (Room roomB in allRooms)
+            {
+                if (roomA == roomB)
+                {
+                    continue;
+                }
+                if (roomA.IsConnected(roomB))
+                {
+                    possibleConnectionFound = false;
+                    break;
+                }
+
+                for (int tileIndexA = 0; tileIndexA < roomA.edgeTiles.Count; tileIndexA++)
+                {
+                    for (int tileIndexB = 0; tileIndexB < roomB.edgeTiles.Count; tileIndexB++)
+                    {
+                        Position tileA = roomA.edgeTiles[tileIndexA];
+                        Position tileB = roomB.edgeTiles[tileIndexB];
+                        int distanceBetweenRooms = (int)(Mathf.Pow(tileA.tileX - tileB.tileX, 2) + Mathf.Pow(tileA.tileY - tileB.tileY, 2));
+
+                        if (distanceBetweenRooms < bestDistance || !possibleConnectionFound)
+                        {
+                            bestDistance = distanceBetweenRooms;
+                            possibleConnectionFound = true;
+                            bestTileA = tileA;
+                            bestTileB = tileB;
+                            bestRoomA = roomA;
+                            bestRoomB = roomB;
+                        }
+                    }
+                }
+            }
+
+            if (possibleConnectionFound)
+            {
+                CreatePassage(bestRoomA, bestRoomB, bestTileA, bestTileB);
+            }
+        }
+    }
+
+    void CreatePassage(Room roomA, Room roomB, Position tileA, Position tileB)
+    {
+        Room.ConnectRooms(roomA, roomB);
+        Debug.Log("RoomA size in tiles=" + roomA.roomSize);
+        Debug.Log("RoomB size in tiles=" + roomB.roomSize);
+        Debug.DrawLine(PosToWorldPoint(tileA), PosToWorldPoint(tileB), Color.green, 1);
+        Debug.Log("TileB position in array= X:" + tileA.tileX +" Y:"+tileA.tileY);
+        Vector3 position = new Vector3(-width / 2 + tileA.tileX, -height / 2 + tileA.tileY);
+        tileSprite.sprite = connecter;
+        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+        Debug.Log("TileB position in array= X:" + tileB.tileX + " Y:"+ tileB.tileY);
+        position = new Vector3(-width / 2 + tileB.tileX, -height / 2 + tileB.tileY);
+        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+    }
+
+    Vector3 PosToWorldPoint(Position tile)
+    {
+        return new Vector3(-width / 2 + tile.tileX, -height / 2  + tile.tileY);
     }
 
     //get all the existing regions(groups of tiles), by checking for similar tiletypes, uses GetRegionTiles
@@ -184,7 +294,8 @@ public class RoomCreation : MonoBehaviour {
     {
         //get the wall regions in the current room
         List<List<Position>> wallRegions=GetRegions(0);
-
+        List<Room> survivingRegion = new List<Room>();
+         
         //pass through each region
         foreach(List<Position> wallRegion in wallRegions)
         {
@@ -212,7 +323,13 @@ public class RoomCreation : MonoBehaviour {
                     room[tile.tileX, tile.tileY] = 0;
                 }
             }
+            else
+            {
+                survivingRegion.Add(new Room(floorRegion, room));
+            }
         }
+
+        ConnectClosestRooms(survivingRegion);
     }
 
     //smoothing function
@@ -227,10 +344,45 @@ public class RoomCreation : MonoBehaviour {
                 int neighbourWallTiles = GetSurroundingWallCount(x, y);
 
                 //depending on how many walls are around the tile, tiletype may be changed
-                if (neighbourWallTiles > 4)
+                if (neighbourWallTiles > tileThreshHold)
                     room[x, y] = 1;
-                else if (neighbourWallTiles < 4)
+                else if (neighbourWallTiles < tileThreshHold)
                     room[x, y] = 0;
+
+            }
+        }
+    }
+
+    void UpgradedSmoothTiles()
+    {
+        //pass through each tile in the room
+        for (int x = 1; x < width - 1; x++)
+        {
+            for (int y = 1; y < height - 1; y++)
+            {
+                //check for surrounding walls for the tiles
+                int neighbourWallTiles = GetSurroundingWallCount(x, y);
+
+                //depending on how many walls are around the tile, tiletype may be changed
+                //if a cell is a wall type but does not have enough neighbours
+                if (room[x, y]==1)
+                {
+                    if (neighbourWallTiles < cellDeath)
+                    {
+                        room[x, y] = 0;
+                    }
+                }
+                else
+                {
+                    if(neighbourWallTiles>cellBirth)
+                    {
+                        room[x, y] = 1;
+                    }
+                    else 
+                    {
+                        room[x, y] = 0;
+                    }
+                }
 
             }
         }
@@ -267,63 +419,21 @@ public class RoomCreation : MonoBehaviour {
         return wallCount;
     }
 
-    void CheckTileTypes(int gridX, int gridY)
+    void RandomPercentFill()
     {
-        int tileType;
-        int percentage = 20;
-        string seed=Time.time.ToString();
-        System.Random roll = new System.Random(seed.GetHashCode());
-        tileType = room[gridX, gridY];
-
-        if(tileType==room[gridX,gridY-1])
-        {
-            percentage += 20;
-        }
-        if (tileType == room[gridX, gridY + 1])
-        {
-            percentage += 20;
-        }
-        if (tileType == room[gridX - 1, gridY])
-        {
-            percentage += 20;
-        }
-        if (tileType == room[gridX + 1, gridY])
-        {
-            percentage += 20;
-        }
-
-        if(roll.Next(0, 100) >= percentage)
-        {
-            if (tileType == 1)
-                room[gridX, gridY] = 0;
-            else
-                room[gridX, gridY] = 1;
-        }
-    }
-
-    //initially, fill the room randomly using a seed entered manually or one randomly generated
-    void RandomFillRoom()
-    {
-        if(useRandomSeed)
-        {
-            seed = Time.time.ToString();
-        }
-
-        System.Random randomNumberGeneration = new System.Random(seed.GetHashCode());
+        System.Random randomNumberGeneration=new System.Random();
 
         for(int i=0; i<width; i++)
         {
             for(int j=0; j<height; j++)
             {
-                //all the tiles at the edge of the room are walls
                 if (i == 0 || i == width - 1 || j == 0 || j == height - 1)
                 {
                     room[i, j] = 0;
                 }
-                //all the other tiles roll for a type
                 else
                 {
-                    room[i, j] = (randomNumberGeneration.Next(0, 100) < randomFillPercent) ? 1 : 0;
+                    room[i, j] = (randomNumberGeneration.Next(0, 100) < changeToChange) ? 1 : 0;
                 }
             }
         }
@@ -360,7 +470,7 @@ public class RoomCreation : MonoBehaviour {
     }
 
     //function created as this check is being used more and more often
-    bool IsInRoomRange(int x, int y)
+    public bool IsInRoomRange(int x, int y)
     {
         //check if the tile is inside the room bounds
         return x >= 0 && x < width && y >= 0 && y < height;
