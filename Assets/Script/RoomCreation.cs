@@ -67,12 +67,12 @@ public class RoomCreation : MonoBehaviour
     }
 
     //room generating function
-    public void GenerateRoom(int W, int H, int sX, int sY, Tiletype[,] roomArray, List<Region> currentRegions)
+    public void GenerateRoom(int W, int H, int sX, int sY, Tiletype[,] roomArray)
     {
-        width = sX + W;
-        height = sY + H;
-        startX = sX;
-        startY = sY;
+        width =W;
+        height =H;
+        startX = 0;
+        startY = 0;
 
         //initialize the room
         //roomArray = new Tiletype[width, height];
@@ -89,7 +89,7 @@ public class RoomCreation : MonoBehaviour
         }
 
         //check for "regions"
-        ProcessRoom(roomArray, currentRegions);
+        ProcessRoom(roomArray);
 
         //add graphical view to the room
         //SetUpTile(roomArray);
@@ -442,7 +442,7 @@ public class RoomCreation : MonoBehaviour
     }
 
     //this function uses GetRegions to remove regions of certain type and size
-    void ProcessRoom(Tiletype[,] roomArray, List<Region> roomRegions)
+    void ProcessRoom(Tiletype[,] roomArray)
     {
         //get the wall regions in the current room
         List<List<Position>> wallRegions = GetRegions(Tiletype.Wall, roomArray);
@@ -496,33 +496,7 @@ public class RoomCreation : MonoBehaviour
             //start connecting regions available in the list
             ConnectClosestRegions(survivingRegions, roomArray);
         }
-
-        foreach (Region region in survivingRegions)
-        {
-            roomRegions.Add(region);
-        }
     }
-
-    //smoothing function
-    //void SmoothTiles()
-    //{
-    //    //pass through each tile in the room
-    //    for (int x = 1; x < width - 1; x++)
-    //    {
-    //        for (int y = 1; y < height - 1; y++)
-    //        {
-    //            //check for surrounding walls for the tiles
-    //            int neighbourWallTiles = GetSurroundingWallCount(x, y);
-
-    //            //depending on how many walls are around the tile, tiletype may be changed
-    //            if (neighbourWallTiles > tileThreshHold)
-    //                room[x, y] = 1;
-    //            else if (neighbourWallTiles < tileThreshHold)
-    //                room[x, y] = 0;
-
-    //        }
-    //    }
-    //}
 
     void UpgradedSmoothTiles(Tiletype[,] roomArray)
     {
@@ -592,8 +566,6 @@ public class RoomCreation : MonoBehaviour
 
     void RandomPercentFill(Tiletype[,] roomArray)
     {
-        Debug.Log("room sizes are, width:" + width + "and height:" + height);
-        Debug.Log("start pos is, X:" + startX + "and Y:" + startY);
         System.Random randomNumberGeneration = new System.Random();
         int rng = RandomlyPick(chanceToChange.m_Min, chanceToChange.m_Max);
 

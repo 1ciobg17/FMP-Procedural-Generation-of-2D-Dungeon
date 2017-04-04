@@ -9,30 +9,27 @@ public enum Tiletype
 }
 
 [Serializable]
+public enum RoomDirection
+{
+    Left, Up, Right, Down, Impossible, 
+}
+
+[Serializable]
 public struct Room
 {
     public int originX;
     public int originY;
     public int height;
     public int width;
-    List<Region> roomRegions=new List<Region>();
-    List<Position> roomTiles = new List<Position>();
+    public Tiletype[,] roomTiles;
 
-    public Room(int x, int y, int H, int W, List<Region> regions, List<Position> tiles)
+    public Room(int x, int y, int H, int W, Tiletype[,] tiles)
     {
+        roomTiles = tiles;
         originX = x;
         originY = y;
         height = H;
         width = W;
-        foreach(Region region in regions)
-        {
-            roomRegions.Add(region);
-        }
-
-        foreach(Position tile in tiles)
-        {
-            roomTiles.Add(tile);
-        }
     }
 }
 
