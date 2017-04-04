@@ -15,13 +15,19 @@ public enum RoomDirection
 }
 
 [Serializable]
-public struct Room
+public class Room
 {
     public int originX;
     public int originY;
     public int height;
     public int width;
     public Tiletype[,] roomTiles;
+    public Surroundings surroundings;
+
+    public Room()
+    {
+
+    }
 
     public Room(int x, int y, int H, int W, Tiletype[,] tiles)
     {
@@ -30,6 +36,13 @@ public struct Room
         originY = y;
         height = H;
         width = W;
+        surroundings = new Surroundings();
+    }
+
+    public void SetPos(int x, int y)
+    {
+        originX = x;
+        originY = y;
     }
 }
 
@@ -44,6 +57,63 @@ public struct Position
     {
         tileX = x;
         tileY = y;
+    }
+}
+
+[Serializable]
+public class Surroundings
+{
+    public bool left;
+    public bool right;
+    public bool bottom;
+    public bool top;
+
+    public Surroundings()
+    {
+        left = false;
+        right = false;
+        bottom = false;
+        top = false;
+    }
+
+    public void LeftIsOccupied()
+    {
+        left = true;
+    }
+
+    public void RightIsOccupied()
+    {
+        right = true;
+    }
+
+    public void TopIsOccupied()
+    {
+        top = true;
+    }
+
+    public void BottomIsOccupied()
+    {
+        bottom = true;
+    }
+
+    public bool IsLeftOccupied()
+    {
+        return left;
+    }
+
+    public bool IsRightOccupied()
+    {
+        return right;
+    }
+
+    public bool IsTopOccupied()
+    {
+        return top;
+    }
+
+    public bool IsBottomOccupied()
+    {
+        return bottom;
     }
 }
 

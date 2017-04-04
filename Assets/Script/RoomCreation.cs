@@ -67,7 +67,7 @@ public class RoomCreation : MonoBehaviour
     }
 
     //room generating function
-    public void GenerateRoom(int W, int H, int sX, int sY, Tiletype[,] roomArray)
+    public void GenerateRoom(int W, int H, Tiletype[,] roomArray)
     {
         width =W;
         height =H;
