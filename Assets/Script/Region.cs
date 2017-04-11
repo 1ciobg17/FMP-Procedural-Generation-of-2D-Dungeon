@@ -9,6 +9,25 @@ public enum Tiletype
 }
 
 [Serializable]
+public struct Passage
+{
+    public int originX;
+    public int originY;
+    public Tiletype[,] passageTiles;
+    public Room firstRoom;
+    public Room secondRoom;
+
+    public Passage(int x, int y, Tiletype[,] tiles, Room A, Room B)
+    {
+        originX = x;
+        originY = y;
+        passageTiles = tiles;
+        firstRoom = A;
+        secondRoom = B;
+    }
+}
+
+[Serializable]
 public enum RoomDirection
 {
     Left, Up, Right, Down, Impossible, 
@@ -22,6 +41,7 @@ public class Room
     public int height;
     public int width;
     public Tiletype[,] roomTiles;
+    public List<Region> regionList;
     public Surroundings surroundings;
 
     public Room()
@@ -29,7 +49,7 @@ public class Room
 
     }
 
-    public Room(int x, int y, int H, int W, Tiletype[,] tiles)
+    public Room(int x, int y, int H, int W, Tiletype[,] tiles, List<Region> regions)
     {
         roomTiles = tiles;
         originX = x;
@@ -37,6 +57,8 @@ public class Room
         height = H;
         width = W;
         surroundings = new Surroundings();
+        regionList = new List<Region>();
+        regionList = regions;
     }
 
     public void SetPos(int x, int y)

@@ -14,7 +14,10 @@ public class LevelManager : MonoBehaviour {
     Position roomPosition;
     public Sprite floor;
     public Sprite wall;
+    public Sprite connecter;
     List<Room> allRooms;
+    List<Position> passageTiles;
+    List<Region> currentRegions;
     public int RoomNumber = 5;
     public RoomCreation roomCreator;
     int xPos;
@@ -32,21 +35,23 @@ public class LevelManager : MonoBehaviour {
     {
         int prevX, prevY, prevH, prevW;
         roomPosition = new Position();
+        passageTiles = new List<Position>();
+        currentRegions = new List<Region>();
         allRooms = new List<Room>();
         prevX = xPos = XConstraints.Random();
         prevY = yPos = YConstraints.Random();
         prevW = roomWidth = RoomWidthRange.Random();
         prevH = roomHeight = RoomHeightRange.Random();
         tiles = new Tiletype[roomWidth, roomHeight];
-        roomCreator.GenerateRoom(roomWidth, roomHeight, tiles);
-        allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles));
+        roomCreator.GenerateRoom(roomWidth, roomHeight, tiles, ref currentRegions);
+        allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions));
         for (int i=1; i<RoomNumber; i++)
         {
             roomWidth = RoomWidthRange.Random();
             roomHeight = RoomHeightRange.Random();
             tiles = new Tiletype[roomWidth, roomHeight];
-            roomCreator.GenerateRoom(roomWidth, roomHeight, tiles);
-            allRooms.Add(new Room(roomPosition.tileX, roomPosition.tileY, roomWidth, roomHeight, tiles));
+            roomCreator.GenerateRoom(roomWidth, roomHeight, tiles,ref currentRegions);
+            allRooms.Add(new Room(roomPosition.tileX, roomPosition.tileY, roomWidth, roomHeight, tiles, currentRegions));
             roomPosition = RandomRoom(prevX, prevY, prevH, prevW, allRooms[i-1], allRooms[i]);
             allRooms[i].SetPos(roomPosition.tileX, roomPosition.tileY);
             allRooms[i].originX = roomPosition.tileX;
@@ -54,15 +59,13 @@ public class LevelManager : MonoBehaviour {
             prevX = roomPosition.tileX;
             prevY = roomPosition.tileY;
         }
-        foreach(Room room in allRooms)
-        {
-            //Debug.Log("Room Width: " + room.width + " Height: " + room.height + " X Pos: " + room.originX + " Y Pos: " + room.originY);
-        }
-        foreach(Room room in allRooms)
+        DrawPassages();
+        foreach (Room room in allRooms)
         {
             Draw(room);
+
         }
-	}
+    }
 	
 	// Update is called once per frame
     void Update()
@@ -99,7 +102,18 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    Position RandomRoom(int prevX, int prevY, int prevH, int prevW, Room prevRoom, Room currRoom)
+    void DrawPassages()
+    {
+        for(int i=0; i<passageTiles.Count; i++)
+        {
+            Vector3 position = new Vector3(passageTiles[i].tileX, passageTiles[i].tileY);
+            tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
+            tileContainer.gameObject.name = "Passage";
+            GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+        }
+    }
+
+    Position RandomRoom(int prevX, int prevY, int prevH, int prevW,Room prevRoom,Room currRoom)
     {
         int x = prevX;
         int y = prevY;
@@ -146,7 +160,7 @@ public class LevelManager : MonoBehaviour {
             case Direction.Right:
                 if (prevRoom.surroundings.IsRightOccupied())
                 { 
-                    RandomRoom(prevX, prevY, prevH, prevW, prevRoom, currRoom);
+                    RandomRoom(prevX, prevY, prevH, prevW,prevRoom,currRoom);
                     goto case Direction.Up;
                 }
                 else
@@ -161,8 +175,77 @@ public class LevelManager : MonoBehaviour {
         roomLocation.tileX = x;
         roomLocation.tileY = y;
 
-        Debug.Log(random+" X: "+x+" Y: "+y);
+        ConnectRegions(prevRoom.regionList, currRoom.regionList, prevX, prevY, roomLocation.tileX, roomLocation.tileY);
 
         return roomLocation;
+    }
+
+    void ConnectRegions(List<Region> regionListA, List<Region> regionListB, int xA, int yA, int xB, int yB)
+    {
+        int bestDistance = 0;
+        int distanceBetweenRooms = 0;
+        Position bestTileA = new Position();
+        Position bestTileB = new Position();
+        bool possibleConnectionFound = false;
+
+        foreach (Region regionA in regionListA)
+        {
+            foreach (Region regionB in regionListB)
+            {
+                for(int i=0; i<regionA.edgeTiles.Count; i++)
+                {
+                    for(int j=0; j<regionB.edgeTiles.Count; j++)
+                    {
+                        Position tileA = regionA.edgeTiles[i];
+                        tileA.tileX = tileA.tileX + xA;
+                        tileA.tileY = tileA.tileY + yA;
+                        Position tileB = regionB.edgeTiles[j];
+                        tileB.tileX = tileB.tileX + xB;
+                        tileB.tileY = tileB.tileY + yB;
+                        distanceBetweenRooms = (int)(Mathf.Pow(tileA.tileX - tileB.tileX, 2) + Mathf.Pow(tileA.tileY - tileB.tileY, 2));
+
+                        if (distanceBetweenRooms < bestDistance || !possibleConnectionFound)
+                        {
+                            bestDistance = distanceBetweenRooms;
+                            //add best cases 
+                            bestTileA = tileA;
+                            bestTileB = tileB;
+                            possibleConnectionFound = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        Vector3 position = new Vector3(bestTileA.tileX, bestTileA.tileY);
+        tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
+        tileContainer.gameObject.name = "TileA";
+        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+
+        position = new Vector3(bestTileB.tileX, bestTileB.tileY);
+        tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
+        tileContainer.gameObject.name = "TileB";
+        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+
+        List<Position> line = roomCreator.GetLine(bestTileA, bestTileB);
+
+        foreach(Position point in line)
+        {
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    if (i * i + j * j <= 1 * 1)
+                    {
+                        //change the tile type of both the current tile and the neighbouring tiles(inside the radius)
+                        int x = point.tileX + i;
+                        int y = point.tileY + j;
+                        //create the corridor
+                        Position tile = new Position(x, y);
+                        passageTiles.Add(tile);
+                    }
+                }
+            }
+        }
     }
 }
