@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+//tile types used especially when creating the room array and drawing the rooms
 [Serializable]
 public enum Tiletype
 {
     Wall, Floor, Test,
 }
 
+//struct used to represent the passages that connect each room
 [Serializable]
 public struct Passage
 {
+    //passage origin, where it is starting from
     public int originX;
     public int originY;
+    //what tiles it contains 
     public Tiletype[,] passageTiles;
+    //the rooms it connects
     public Room firstRoom;
     public Room secondRoom;
 
+    //constructor
     public Passage(int x, int y, Tiletype[,] tiles, Room A, Room B)
     {
         originX = x;
@@ -27,40 +33,40 @@ public struct Passage
     }
 }
 
-[Serializable]
-public enum RoomDirection
-{
-    Left, Up, Right, Down, Impossible, 
-}
+
 
 [Serializable]
 public class Room
 {
+    //room origin, the bottom left corner of the room
     public int originX;
     public int originY;
+    //width and height, either random or section size
     public int height;
     public int width;
+    //all the tiles in a room
     public Tiletype[,] roomTiles;
+    //all the tiles separated in regions
     public List<Region> regionList;
-    public Surroundings surroundings;
 
     public Room()
     {
 
     }
 
-    public Room(int x, int y, int H, int W, Tiletype[,] tiles, List<Region> regions)
+    //constructor
+    public Room(int x, int y, int H, int W, Tiletype[,] tiles, List<Region> regions, Section section)
     {
         roomTiles = tiles;
         originX = x;
         originY = y;
         height = H;
         width = W;
-        surroundings = new Surroundings();
         regionList = new List<Region>();
         regionList = regions;
     }
 
+    //soemthing to change the room position if needed
     public void SetPos(int x, int y)
     {
         originX = x;
@@ -68,6 +74,8 @@ public class Room
     }
 }
 
+//trying to move away from using unity too much
+//creating personal containers for positions
 [Serializable]
 public struct Position
 {
@@ -80,62 +88,11 @@ public struct Position
         tileX = x;
         tileY = y;
     }
-}
 
-[Serializable]
-public class Surroundings
-{
-    public bool left;
-    public bool right;
-    public bool bottom;
-    public bool top;
-
-    public Surroundings()
+    public Position(Position pos)
     {
-        left = false;
-        right = false;
-        bottom = false;
-        top = false;
-    }
-
-    public void LeftIsOccupied()
-    {
-        left = true;
-    }
-
-    public void RightIsOccupied()
-    {
-        right = true;
-    }
-
-    public void TopIsOccupied()
-    {
-        top = true;
-    }
-
-    public void BottomIsOccupied()
-    {
-        bottom = true;
-    }
-
-    public bool IsLeftOccupied()
-    {
-        return left;
-    }
-
-    public bool IsRightOccupied()
-    {
-        return right;
-    }
-
-    public bool IsTopOccupied()
-    {
-        return top;
-    }
-
-    public bool IsBottomOccupied()
-    {
-        return bottom;
+        tileX = pos.tileX;
+        tileY = pos.tileY;
     }
 }
 
@@ -235,5 +192,128 @@ public class Region : IComparable<Region>
     public int CompareTo(Region otherRegion)
     {
         return otherRegion.regionSize.CompareTo(regionSize);
+    }
+}
+
+//sections/leafs of a BSP tree
+//used in partitioning
+[Serializable]
+public class Section
+{
+    //minimum size of regions
+    private const int SectionSize = 15;
+    //region location, bottom right corner
+    public Position location;
+    //its size
+    public int width;
+    public int height;
+
+    //its child sections after splitting
+    public Section leftSection;
+    public Section rightSection;
+    //room contained in the region
+    public Room insideRoom;
+    //child rooms(part of child sections) contained in this region
+    public List<Room> childSectionRooms;
+
+    public Section()
+    {
+    }
+
+    //constructor
+    public Section(Position pos, int W, int H)
+    {
+        location = new Position(pos);
+        width = W;
+        height = H;
+        childSectionRooms = new List<Room>();
+    }
+
+    //split the room either vertically or horizontally
+    //this is where child sections are set
+    public bool Split()
+    {
+        //randomly choose how
+        System.Random randomNumberGeneration = new System.Random();
+
+        //50/50
+        bool splitHorizontally = ((randomNumberGeneration.Next(100) <= 50) ? true : false);
+
+        //if this section was already split
+        if (leftSection!=null && rightSection!=null)
+        {
+            return false;
+        }
+
+        //if the width is atleast 1/4 higher than the height then we force the split to be vertical
+        if(width+width/4>=height)
+        {
+            splitHorizontally = false;
+        }
+        else
+        {
+            //the opposite
+            if(height+height/4>=width)
+            {
+                splitHorizontally = true;
+            }
+        }
+
+        //can the section be split anymore, in either of those directions?
+        int max = (splitHorizontally ? height : width) - SectionSize;
+
+        //if its not possible
+        if(max<SectionSize)
+        {
+            return false;
+        }
+
+        //select split point randomly
+        int split = randomNumberGeneration.Next(SectionSize, max);
+        Position newPos;
+
+        //now split and create the child sections
+        if (splitHorizontally)
+        {
+            leftSection = new Section(location, width, split);
+            newPos = new Position(location.tileX, location.tileY + split);
+            rightSection = new Section(newPos, width, height - split);
+        }
+        else
+        {
+            leftSection = new Section(location, split, height);
+            newPos = new Position(location.tileX + split, location.tileY);
+            rightSection = new Section(newPos, width - split, height);
+        }
+
+        return true; // split successful
+    }
+
+    //get the rooms of ALL child sections(child of child and on..)
+    public List<Room> GetChildSectionRooms()
+    {
+        //create a list
+        List<Room> sectionRooms =new List<Room>();
+        //add this sections room to the list
+        if (this.insideRoom!=null)
+        {
+            sectionRooms.Add(this.insideRoom);
+        }
+        else
+        {
+            //if it doesn't actually have a room aka is not a final sections
+            //go after its child sections
+            if(this.leftSection!=null)
+            {
+                sectionRooms.AddRange(this.leftSection.GetChildSectionRooms());
+            }
+            if(this.rightSection!=null)
+            {
+                sectionRooms.AddRange(this.rightSection.GetChildSectionRooms());
+            }
+        }
+
+        //return the list
+        return sectionRooms;
     }
 }

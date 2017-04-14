@@ -6,14 +6,13 @@ using UnityEngine;
 public class RoomCreation : MonoBehaviour
 {
     //room sizes
-    public int width;
-    public int height;
-    //room starting coordinates
-    public int startX = 0;
-    public int startY = 0;
+    int width;
+    int height;
+    //room coordinates
+    public int originX = 0;
+    int originY = 0;
 
     //a loose guideline to fill the room, percentage only
-    //[Range(0, 100)]
     public IntRange chanceToChange = new IntRange(45, 60);
     //cell death happens at lower neighbour limit
     public int cellDeath = 4;
@@ -22,22 +21,13 @@ public class RoomCreation : MonoBehaviour
     //region size(groups of tiles of same value
     public int wallThreshHoldSize = 5;
     public int floorThreshHoldSize = 5;
-    //tile changing threshhold
-    public int tileThreshHold = 4;
     //passage way sizes
     public int passageWaySize = 1;
     //room array of tiles
-    //[Range(0, 10)]
     public IntRange smoothCount = new IntRange(1, 3);
     public bool debugLines = false;
-    //the used gameobject prefab
-    public GameObject tileContainer;//wall is 0, floor is 1
     //current chance
     int currentChangeOfChange=0;
-    //the specific sprite for each tile type currently available
-    public Sprite floor;
-    public Sprite wall;
-    public Sprite connecter;
 
     //room generating function
     public void GenerateRoom(int W, int H, Tiletype[,] roomArray,ref List<Region> regionList)
@@ -46,11 +36,17 @@ public class RoomCreation : MonoBehaviour
 
         width = W;
         height = H;
-        startX = 0;
-        startY = 0;
+        originX = 0;
+        originY = 0;
 
         //fill the room with tiles
         RandomPercentFill(roomArray);
+
+        //start iterating with the current room
+        for (int i = 0; i < RandomlyPick(smoothCount.m_Min, smoothCount.m_Max); i++)
+        {
+            SmoothTiles(roomArray);
+        }
 
         check = RoomCheck(roomArray);
 
@@ -66,12 +62,6 @@ public class RoomCreation : MonoBehaviour
 
             GenerateRoom(W, H, roomArray, ref regionList);
             return;
-        }
-
-        //start iterating with the current room
-        for (int i = 0; i < RandomlyPick(smoothCount.m_Min, smoothCount.m_Max); i++)
-        {
-            SmoothTiles(roomArray);
         }
 
         //check for "regions"
@@ -217,22 +207,6 @@ public class RoomCreation : MonoBehaviour
         }
     }
 
-    void CreatePassage(Region regionA, Region regionB, Position tileA, Position tileB, Tiletype[,] roomArray, List<Passage> passageList)
-    {
-        //connect the two regions
-        Region.ConnectRegions(regionA, regionB);
-
-        //get the line between the two tiles in order to determine what tiles in between them need to have their type changed to create corridors
-        List<Position> line = GetLine(tileA, tileB);
-
-        //each point in the line
-        foreach (Position pos in line)
-        {
-            //draw a circle, with a radius
-            DrawCircle(pos, passageWaySize, roomArray);
-        }
-    }
-
     //having the tile and a radius
     void DrawCircle(Position pos, int radius, Tiletype[,] roomArray)
     {
@@ -356,9 +330,9 @@ public class RoomCreation : MonoBehaviour
         int[,] roomFlags = new int[width, height];
 
         //for each tile in the room
-        for (int x = startX; x < width - 1; x++)
+        for (int x = originX; x < width - 1; x++)
         {
-            for (int y = startY; y < height - 1; y++)
+            for (int y = originY; y < height - 1; y++)
             {
                 //check if the tile hasn't been checked beforehand, and tile is of similar type with the given value(walls or floors)
                 if (roomFlags[x, y] == 0 && roomArray[x, y] == tileType)
@@ -382,21 +356,21 @@ public class RoomCreation : MonoBehaviour
     }
 
     //this functions gets tiles coordinates and checks around the tile for similar tiletypes
-    List<Position> GetRegionTiles(int startX, int startY, Tiletype[,] roomArray)
+    List<Position> GetRegionTiles(int originX, int originY, Tiletype[,] roomArray)
     {
         //create a list of tiles
         List<Position> tiles = new List<Position>();
         //create the room array of tiles in order to flag already checked tiles
         int[,] roomFlags = new int[width, height];
         //acquire tiletype of the tile at the given array coordinates
-        Tiletype tileType = roomArray[startX, startY];
+        Tiletype tileType = roomArray[originX, originY];
 
         //create a queue of tile coordinates
         Queue<Position> queue = new Queue<Position>();
         //add the current tile at the given coordinates to the queue
-        queue.Enqueue(new Position(startX, startY));
+        queue.Enqueue(new Position(originX, originY));
         //also flag the tile as already being checked once
-        roomFlags[startX, startY] = 1;
+        roomFlags[originX, originY] = 1;
 
         while (queue.Count > 0)
         {
@@ -492,9 +466,9 @@ public class RoomCreation : MonoBehaviour
     void SmoothTiles(Tiletype[,] roomArray)
     {
         //pass through each tile in the room
-        for (int x = startX + 1; x < width - 1; x++)
+        for (int x = originX + 1; x < width - 1; x++)
         {
-            for (int y = startY + 1; y < height - 1; y++)
+            for (int y = originY + 1; y < height - 1; y++)
             {
                 //check for surrounding walls for the tiles
                 int neighbourWallTiles = GetSurroundingWallCount(x, y, roomArray);
@@ -560,9 +534,9 @@ public class RoomCreation : MonoBehaviour
         System.Random randomNumberGeneration = new System.Random();
         currentChangeOfChange = RandomlyPick(chanceToChange.m_Min, chanceToChange.m_Max);
 
-        for (int i = startX; i < width; i++)
+        for (int i = originX; i < width; i++)
         {
-            for (int j = startY; j < height; j++)
+            for (int j = originY; j < height; j++)
             {
                 if (i == 0 || i == width - 1 || j == 0 || j == height - 1)
                 {
@@ -576,56 +550,11 @@ public class RoomCreation : MonoBehaviour
         }
     }
 
-    ////give each tile type its respective sprite, black for walls, red for floors
-    void SetUpTile(Tiletype[,] roomArray)
-    {
-        //if the room ahs been set up
-        if (roomArray != null)
-        {
-            //for each tile
-            for (int i = startX; i < width; i++)
-            {
-                for (int j = startY; j < height; j++)
-                {
-                    //get position of the tile by calculating it
-                    Vector3 position = new Vector3(-width / 2 + i, -height / 2 + j);
-                    if (roomArray[i, j] == Tiletype.Floor)
-                    {
-                        tileContainer.GetComponent<SpriteRenderer>().sprite = floor;
-                        tileContainer.gameObject.tag = "Tile";
-                        tileContainer.gameObject.name = "Floor";
-                        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
-                    }
-                    else
-                    {
-                        if (roomArray[i, j] == Tiletype.Wall)
-                        {
-                            tileContainer.GetComponent<SpriteRenderer>().sprite = wall;
-                            tileContainer.gameObject.tag = "Tile";
-                            tileContainer.gameObject.name = "Wall";
-                            GameObject.Instantiate(tileContainer, position, Quaternion.identity);
-                        }
-                        else
-                        {
-                            if (roomArray[i, j] == Tiletype.Test)
-                            {
-                                tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
-                                tileContainer.gameObject.tag = "Tile";
-                                tileContainer.gameObject.name = "Test";
-                                GameObject.Instantiate(tileContainer, position, Quaternion.identity);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     //function created as this check is being used more and more often
     public bool IsInRoomRange(int x, int y)
     {
         //check if the tile is inside the room bounds
-        return x >= startX && x < width && y >= startY && y < height;
+        return x >= originX && x < width && y >= originY && y < height;
     }
 
     int RandomlyPick(int min, int max)

@@ -4,77 +4,82 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-    public IntRange XConstraints;
-    public IntRange YConstraints;
     public IntRange RoomWidthRange;
     public IntRange RoomHeightRange;
-    public IntRange DistanceBetweenRooms;
+    public int maxSectionSize = 30;
+    public int SectionWidth=70;
+    public int SectionHeight=70;
     public GameObject tileContainer;//wall is 0, floor is 1
     //the specific sprite for each tile type currently available
-    Position roomPosition;
     public Sprite floor;
     public Sprite wall;
     public Sprite connecter;
     List<Room> allRooms;
     List<Position> passageTiles;
     List<Region> currentRegions;
-    public int RoomNumber = 5;
     public RoomCreation roomCreator;
-    int xPos;
-    int yPos;
-    int roomWidth;
-    int roomHeight;
     Tiletype[,] tiles;
-    enum Direction //room movement direction
+    List<Section> sections;
+
+    void Start () 
     {
-        Up, Down, Left, Right,
+        Initialiaze();
+
+        SplitSection();
+
+        CreateRoomsFromSection();
+
+        ConnectSectionRooms();
+
+        Draw();
     }
 
-	// Use this for initialization
-	void Start () 
+    //create rooms out of sections
+    void CreateRoom(Section section)
     {
-        int prevX, prevY, prevH, prevW;
-        roomPosition = new Position();
-        passageTiles = new List<Position>();
-        currentRegions = new List<Region>();
-        allRooms = new List<Room>();
-        prevX = xPos = XConstraints.Random();
-        prevY = yPos = YConstraints.Random();
-        prevW = roomWidth = RoomWidthRange.Random();
-        prevH = roomHeight = RoomHeightRange.Random();
-        tiles = new Tiletype[roomWidth, roomHeight];
-        roomCreator.GenerateRoom(roomWidth, roomHeight, tiles, ref currentRegions);
-        allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions));
-        for (int i=1; i<RoomNumber; i++)
+        //take section values/position into consideration
+        int xPos;
+        int yPos;
+        int roomWidth;
+        int roomHeight;
+
+        System.Random randomNumberGeneration = new System.Random();
+
+        //if the section has been split and need rooms to be created in its children
+        if (section.leftSection != null || section.rightSection != null)
         {
-            roomWidth = RoomWidthRange.Random();
-            roomHeight = RoomHeightRange.Random();
+            //create rooms in the child sections
+            if (section.leftSection != null)
+            {
+                CreateRoom(section.leftSection);
+            }
+            if (section.rightSection != null)
+            {
+                CreateRoom(section.rightSection);
+            }
+        }
+        else
+        {
+            //if this section is one that need a room
+            xPos = section.location.tileX;
+            yPos = section.location.tileY;
+            //values are the same as the IntRange values for RoomWidth/HeightRange
+            roomWidth = randomNumberGeneration.Next(RoomWidthRange.m_Min, section.width);
+            roomHeight = randomNumberGeneration.Next(RoomHeightRange.m_Min, section.height);
             tiles = new Tiletype[roomWidth, roomHeight];
-            roomCreator.GenerateRoom(roomWidth, roomHeight, tiles,ref currentRegions);
-            allRooms.Add(new Room(roomPosition.tileX, roomPosition.tileY, roomWidth, roomHeight, tiles, currentRegions));
-            roomPosition = RandomRoom(prevX, prevY, prevH, prevW, allRooms[i-1], allRooms[i]);
-            allRooms[i].SetPos(roomPosition.tileX, roomPosition.tileY);
-            allRooms[i].originX = roomPosition.tileX;
-            allRooms[i].originY = roomPosition.tileY;
-            prevX = roomPosition.tileX;
-            prevY = roomPosition.tileY;
-        }
-        DrawPassages();
-        foreach (Room room in allRooms)
-        {
-            Draw(room);
-
+            //generate the room
+            roomCreator.GenerateRoom(roomWidth, roomHeight, tiles, ref currentRegions);
+            //add it to the room list
+            allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section));
+            //then give it to the section
+            section.insideRoom =new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section);
         }
     }
-	
-	// Update is called once per frame
-    void Update()
-    {
 
-    }
-
-    void Draw(Room room)
+    //draw the rooms, for debug purposes
+    void DrawRoom(Room room)
     {
+        //tranverse each tile
         for (int i = 0; i < room.height; i++)
         {
             for (int j = 0; j < room.width; j++)
@@ -102,6 +107,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+    //tranverse each tile then draw
     void DrawPassages()
     {
         for(int i=0; i<passageTiles.Count; i++)
@@ -113,73 +119,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    Position RandomRoom(int prevX, int prevY, int prevH, int prevW,Room prevRoom,Room currRoom)
-    {
-        int x = prevX;
-        int y = prevY;
-        int distance = DistanceBetweenRooms.Random();
-        Position roomLocation = new Position();
-        Direction random = (Direction)Random.Range(0, 4);
-        switch (random)
-        {
-            case Direction.Up:
-                if (prevRoom.surroundings.IsTopOccupied())
-                {
-                    goto case Direction.Down;
-                }
-                else
-                {
-                    currRoom.surroundings.BottomIsOccupied();
-                    y += prevH + distance;
-                }
-                break;
-            case Direction.Down:
-                if (prevRoom.surroundings.IsBottomOccupied())
-                {
-                    goto case Direction.Left;
-                }
-                else
-                {
-                    prevRoom.surroundings.BottomIsOccupied();
-                    currRoom.surroundings.TopIsOccupied();
-                    y -= (prevH + distance);
-                }
-                break;
-            case Direction.Left:
-                if (prevRoom.surroundings.IsLeftOccupied())
-                {
-                    goto case Direction.Right;
-                }
-                else
-                {
-                    prevRoom.surroundings.LeftIsOccupied();
-                    currRoom.surroundings.RightIsOccupied();
-                    x -= (prevW + distance);
-                }
-                break;
-            case Direction.Right:
-                if (prevRoom.surroundings.IsRightOccupied())
-                { 
-                    RandomRoom(prevX, prevY, prevH, prevW,prevRoom,currRoom);
-                    goto case Direction.Up;
-                }
-                else
-                {
-                    prevRoom.surroundings.RightIsOccupied();
-                    currRoom.surroundings.LeftIsOccupied();
-                    x += prevW + distance;
-                }
-                break;
-        }
-
-        roomLocation.tileX = x;
-        roomLocation.tileY = y;
-
-        ConnectRegions(prevRoom.regionList, currRoom.regionList, prevX, prevY, roomLocation.tileX, roomLocation.tileY);
-
-        return roomLocation;
-    }
-
+    //very similar to how regions are connected within a room but adapted to these needs
     void ConnectRegions(List<Region> regionListA, List<Region> regionListB, int xA, int yA, int xB, int yB)
     {
         int bestDistance = 0;
@@ -217,6 +157,7 @@ public class LevelManager : MonoBehaviour {
             }
         }
 
+        //for debugging purposes, connecting tiles selected
         Vector3 position = new Vector3(bestTileA.tileX, bestTileA.tileY);
         tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
         tileContainer.gameObject.name = "TileA";
@@ -244,6 +185,127 @@ public class LevelManager : MonoBehaviour {
                         Position tile = new Position(x, y);
                         passageTiles.Add(tile);
                     }
+                }
+            }
+        }
+    }
+
+    //get the closest rooms, used to determine what rooms should be connected when sections that contain multiple rooms from their children need to be connceted
+    void GetClosestRooms(List<Room> ListA, List<Room> ListB,ref Room left,ref Room right)
+    {
+        int distance=0;
+        int bestDistance=0;
+        bool connectionFound = false;
+        foreach(Room roomA in ListA)
+        {
+            foreach(Room roomB in ListB)
+            {
+                distance= (int)(Mathf.Pow(roomA.originX - roomB.originX, 2) + Mathf.Pow(roomA.originY - roomB.originY, 2));
+                if(distance<bestDistance || !connectionFound)
+                {
+                    bestDistance = distance;
+                    connectionFound = true;
+                    left = roomA;
+                    right = roomB;
+                }
+            }
+        }
+    }
+
+    void Draw()
+    {
+        DrawPassages();
+        foreach (Room room in allRooms)
+        {
+            DrawRoom(room);
+
+        }
+    }
+
+    void Initialiaze()
+    {
+        passageTiles = new List<Position>();
+        currentRegions = new List<Region>();
+        allRooms = new List<Room>();
+
+        sections = new List<Section>();
+        Section root = new Section(new Position(0, 0), SectionWidth, SectionHeight);
+        sections.Add(root);
+    }
+
+    //split each section
+    void SplitSection()
+    {
+        bool doSplit = true;
+        while (doSplit)
+        {
+            //until spliting is required no longer
+            doSplit = false;
+            for (int i = 0; i < sections.Count; i++)
+            {
+                Section section = sections[i];
+                if (section.leftSection == null && section.rightSection == null)
+                {
+                    //if its sizes are acceptable for splitting, else this must be a final section
+                    if (section.width > maxSectionSize || section.height > maxSectionSize)
+                    {
+                        if (section.Split())
+                        {
+                            sections.Add(section.leftSection);
+                            sections.Add(section.rightSection);
+                            doSplit = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //tranverse through each section
+    void CreateRoomsFromSection()
+    {
+        //in a reverse order so we start with the children
+        for (int i = sections.Count - 1; i >= 0; i--)
+        {
+            //if both sections are empty, create the rooms
+            if (sections[i].leftSection == null && sections[i].rightSection == null)
+            {
+                CreateRoom(sections[i]);
+            }
+        }
+
+        //set up the child rooms list that exist within each section, including rooms contained in grandchildren and on
+        for (int i = 0; i < sections.Count - 1; i++)
+        {
+            sections[i].childSectionRooms = sections[i].GetChildSectionRooms();
+        }
+    }
+
+    //when sections need to have their rooms connected
+    void ConnectSectionRooms()
+    {
+        Room leftRoom;
+        Room rightRoom;
+
+        for (int i = sections.Count - 1; i >= 0; i--)
+        {
+            //if they have a room
+            if (sections[i].leftSection != null & sections[i].rightSection != null)
+            {
+                //if the section contains more than 1 child aka is not an end section of the BSP tree
+                if (sections[i].leftSection.childSectionRooms.Count > 1 || sections[i].rightSection.childSectionRooms.Count > 1)
+                {
+                    //find what rooms are closest between the two sections
+                    leftRoom = new Room();
+                    rightRoom = new Room();
+                    GetClosestRooms(sections[i].leftSection.childSectionRooms, sections[i].rightSection.childSectionRooms, ref leftRoom, ref rightRoom);
+                    //then connect
+                    ConnectRegions(leftRoom.regionList, rightRoom.regionList, leftRoom.originX, leftRoom.originY, rightRoom.originX, rightRoom.originY);
+                }
+                else
+                {
+                    //if section has only one room, then just connect them
+                    ConnectRegions(sections[i].leftSection.insideRoom.regionList, sections[i].rightSection.insideRoom.regionList, sections[i].leftSection.insideRoom.originX, sections[i].leftSection.insideRoom.originY, sections[i].rightSection.insideRoom.originX, sections[i].rightSection.insideRoom.originY);
                 }
             }
         }
