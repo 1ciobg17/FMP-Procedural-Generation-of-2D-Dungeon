@@ -9,7 +9,7 @@ public class RoomCreation : MonoBehaviour
     int width;
     int height;
     //room coordinates
-    public int originX = 0;
+    int originX = 0;
     int originY = 0;
 
     //a loose guideline to fill the room, percentage only
@@ -52,14 +52,6 @@ public class RoomCreation : MonoBehaviour
 
         if (!check)
         {
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    roomArray[i, j] = Tiletype.Wall;
-                }
-            }
-
             GenerateRoom(W, H, roomArray, ref regionList);
             return;
         }

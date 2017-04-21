@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using UnityEngine;
 
 //tile types used especially when creating the room array and drawing the rooms
 [Serializable]
 public enum Tiletype
 {
-    Wall, Floor, Test,
+    Wall, Floor, Connector, Entry, Null,
 }
 
 //struct used to represent the passages that connect each room
@@ -48,6 +49,9 @@ public class Room
     public Tiletype[,] roomTiles;
     //all the tiles separated in regions
     public List<Region> regionList;
+    //all the wall tiles that surround the room
+    public List<Position> wallTiles;
+    public List<GameObject> entryTiles;
 
     public Room()
     {
@@ -64,6 +68,8 @@ public class Room
         width = W;
         regionList = new List<Region>();
         regionList = regions;
+        wallTiles = new List<Position>();
+        entryTiles = new List<GameObject>();
     }
 
     //soemthing to change the room position if needed
@@ -71,6 +77,48 @@ public class Room
     {
         originX = x;
         originY = y;
+    }
+
+    public void DetermineEnclosingWall()
+    {
+        for (int x = 0; x < height; x++)
+        {
+            for (int y = 0; y < width; y++)
+            {
+                if (roomTiles[x, y] == Tiletype.Wall)
+                {
+                    if ((y > 0) && roomTiles[x, y - 1] == Tiletype.Floor)
+                    {
+                        wallTiles.Add(new Position(x, y));
+                    }
+                    else
+                    {
+                        if ((y < width - 1) && roomTiles[x, y + 1] == Tiletype.Floor)
+                        {
+                            wallTiles.Add(new Position(x, y));
+                        }
+                        else
+                        {
+                            if ((x > 0) && roomTiles[x - 1, y] == Tiletype.Floor)
+                            {
+                                wallTiles.Add(new Position(x, y));
+                            }
+                            else
+                            {
+                                if ((x < height - 1) && roomTiles[x + 1, y] == Tiletype.Floor)
+                                {
+                                    wallTiles.Add(new Position(x, y));
+                                }
+                                else
+                                {
+                                    roomTiles[x, y] = Tiletype.Null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -93,6 +141,15 @@ public struct Position
     {
         tileX = pos.tileX;
         tileY = pos.tileY;
+    }
+
+    public bool IsEqual(Position pos)
+    {
+        if(tileX==pos.tileX && tileY==pos.tileY)
+        {
+            return true;
+        }
+        return false;
     }
 }
 

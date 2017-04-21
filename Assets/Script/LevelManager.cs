@@ -9,13 +9,14 @@ public class LevelManager : MonoBehaviour {
     public int maxSectionSize = 30;
     public int SectionWidth=70;
     public int SectionHeight=70;
-    public GameObject tileContainer;//wall is 0, floor is 1
+    public GameObject wallContainer;//wall is 0, floor is 1
+    public GameObject passageContainer;
+    public GameObject generalContainer;
+    public GameObject EntryContainer;
     //the specific sprite for each tile type currently available
-    public Sprite floor;
-    public Sprite wall;
-    public Sprite connecter;
     List<Room> allRooms;
     List<Position> passageTiles;
+    List<Position> passageWalls;
     List<Region> currentRegions;
     public RoomCreation roomCreator;
     Tiletype[,] tiles;
@@ -71,56 +72,65 @@ public class LevelManager : MonoBehaviour {
             roomCreator.GenerateRoom(roomWidth, roomHeight, tiles, ref currentRegions);
             //add it to the room list
             allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section));
+            allRooms[allRooms.Count - 1].DetermineEnclosingWall();
             //then give it to the section
             section.insideRoom =new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section);
+            section.insideRoom.wallTiles = allRooms[allRooms.Count - 1].wallTiles;
         }
     }
 
     //draw the rooms, for debug purposes
     void DrawRoom(Room room)
     {
+        Vector3 position;
         //tranverse each tile
         for (int i = 0; i < room.height; i++)
         {
             for (int j = 0; j < room.width; j++)
             {
                 //get position of the tile by calculating it
-                Vector3 position = new Vector3(room.originX + i, room.originY + j);
+                position = new Vector3(room.originX + i, room.originY + j);
                 if (room.roomTiles[i, j] == Tiletype.Floor)
                 {
-                    tileContainer.GetComponent<SpriteRenderer>().sprite = floor;
-                    tileContainer.gameObject.tag = "Tile";
-                    tileContainer.gameObject.name = "Floor";
-                    GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+
+                    GameObject.Instantiate(generalContainer, position, Quaternion.identity);
                 }
                 else
                 {
-                    if (room.roomTiles[i, j] == Tiletype.Wall)
+                    if(room.roomTiles[i,j]==Tiletype.Entry)
                     {
-                        tileContainer.GetComponent<SpriteRenderer>().sprite = wall;
-                        tileContainer.gameObject.tag = "Tile";
-                        tileContainer.gameObject.name = "Wall";
-                        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+                        room.entryTiles.Add(Instantiate(EntryContainer, position, Quaternion.identity));
                     }
                 }
             }
+        }
+        foreach (Position wallingTile in room.wallTiles)
+        {
+            position = new Vector3(room.originX + wallingTile.tileX, room.originY + wallingTile.tileY);
+            wallContainer.name = "WallTile_Placeholder";
+            GameObject.Instantiate(wallContainer, position, Quaternion.identity);
         }
     }
 
     //tranverse each tile then draw
     void DrawPassages()
     {
+        Vector3 position;
         for(int i=0; i<passageTiles.Count; i++)
         {
-            Vector3 position = new Vector3(passageTiles[i].tileX, passageTiles[i].tileY);
-            tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
-            tileContainer.gameObject.name = "Passage";
-            GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+            position = new Vector3(passageTiles[i].tileX, passageTiles[i].tileY);
+            passageContainer.gameObject.name = "Passage";
+            GameObject.Instantiate(passageContainer, position, Quaternion.identity);
+        }
+        for(int i=0; i<passageWalls.Count; i++)
+        {
+            position = new Vector3(passageWalls[i].tileX, passageWalls[i].tileY);
+            GameObject.Instantiate(wallContainer, position, Quaternion.identity);
         }
     }
 
     //very similar to how regions are connected within a room but adapted to these needs
-    void ConnectRegions(List<Region> regionListA, List<Region> regionListB, int xA, int yA, int xB, int yB)
+    void ConnectRegions(Room roomA, Room roomB, int xA, int yA, int xB, int yB)
     {
         int bestDistance = 0;
         int distanceBetweenRooms = 0;
@@ -128,9 +138,9 @@ public class LevelManager : MonoBehaviour {
         Position bestTileB = new Position();
         bool possibleConnectionFound = false;
 
-        foreach (Region regionA in regionListA)
+        foreach (Region regionA in roomA.regionList)
         {
-            foreach (Region regionB in regionListB)
+            foreach (Region regionB in roomB.regionList)
             {
                 for(int i=0; i<regionA.edgeTiles.Count; i++)
                 {
@@ -157,37 +167,11 @@ public class LevelManager : MonoBehaviour {
             }
         }
 
-        //for debugging purposes, connecting tiles selected
-        Vector3 position = new Vector3(bestTileA.tileX, bestTileA.tileY);
-        tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
-        tileContainer.gameObject.name = "TileA";
-        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
+        roomA.roomTiles[bestTileA.tileX - roomA.originX, bestTileA.tileY - roomA.originY] = Tiletype.Entry;
+        roomB.roomTiles[bestTileB.tileX - roomB.originX, bestTileB.tileY - roomB.originY] = Tiletype.Entry;
+        WallOffEntrance(roomA, roomB, bestTileA, bestTileB);
 
-        position = new Vector3(bestTileB.tileX, bestTileB.tileY);
-        tileContainer.GetComponent<SpriteRenderer>().sprite = connecter;
-        tileContainer.gameObject.name = "TileB";
-        GameObject.Instantiate(tileContainer, position, Quaternion.identity);
-
-        List<Position> line = roomCreator.GetLine(bestTileA, bestTileB);
-
-        foreach(Position point in line)
-        {
-            for (int i = -1; i <= 1; i++)
-            {
-                for (int j = -1; j <= 1; j++)
-                {
-                    if (i * i + j * j <= 1 * 1)
-                    {
-                        //change the tile type of both the current tile and the neighbouring tiles(inside the radius)
-                        int x = point.tileX + i;
-                        int y = point.tileY + j;
-                        //create the corridor
-                        Position tile = new Position(x, y);
-                        passageTiles.Add(tile);
-                    }
-                }
-            }
-        }
+        DeterminePassageWay(bestTileA, bestTileB);
     }
 
     //get the closest rooms, used to determine what rooms should be connected when sections that contain multiple rooms from their children need to be connceted
@@ -218,13 +202,13 @@ public class LevelManager : MonoBehaviour {
         foreach (Room room in allRooms)
         {
             DrawRoom(room);
-
         }
     }
 
     void Initialiaze()
     {
         passageTiles = new List<Position>();
+        passageWalls = new List<Position>();
         currentRegions = new List<Region>();
         allRooms = new List<Room>();
 
@@ -300,13 +284,376 @@ public class LevelManager : MonoBehaviour {
                     rightRoom = new Room();
                     GetClosestRooms(sections[i].leftSection.childSectionRooms, sections[i].rightSection.childSectionRooms, ref leftRoom, ref rightRoom);
                     //then connect
-                    ConnectRegions(leftRoom.regionList, rightRoom.regionList, leftRoom.originX, leftRoom.originY, rightRoom.originX, rightRoom.originY);
+                    ConnectRegions(leftRoom, rightRoom, leftRoom.originX, leftRoom.originY, rightRoom.originX, rightRoom.originY);
                 }
                 else
                 {
                     //if section has only one room, then just connect them
-                    ConnectRegions(sections[i].leftSection.insideRoom.regionList, sections[i].rightSection.insideRoom.regionList, sections[i].leftSection.insideRoom.originX, sections[i].leftSection.insideRoom.originY, sections[i].rightSection.insideRoom.originX, sections[i].rightSection.insideRoom.originY);
+                    ConnectRegions(sections[i].leftSection.insideRoom, sections[i].rightSection.insideRoom, sections[i].leftSection.insideRoom.originX, sections[i].leftSection.insideRoom.originY, sections[i].rightSection.insideRoom.originX, sections[i].rightSection.insideRoom.originY);
                 }
+            }
+        }
+    }
+
+    void DeterminePassageWay(Position tileA, Position tileB)
+    {
+        List<Position> newPassageList = new List<Position>();
+        Position newTileC=new Position(tileA);
+        Position newTileD=new Position(tileB);
+        int horizontalDistance = 0, verticalDistance=0;
+        horizontalDistance = Mathf.Abs(tileA.tileX - tileB.tileX);
+        verticalDistance = Mathf.Abs(tileA.tileY - tileB.tileY);
+
+        if(horizontalDistance<verticalDistance)
+        {
+            if (tileA.tileY > tileB.tileY || tileA.tileY < tileB.tileY)
+            {
+                newTileC.tileX = tileA.tileX;
+                newTileD.tileX = tileB.tileX;
+                newTileC.tileY = Mathf.Abs(tileA.tileY + tileB.tileY) / 2;
+                newTileD.tileY = Mathf.Abs(tileA.tileY + tileB.tileY) / 2;
+            }
+        }
+        else
+        {
+            if (verticalDistance<horizontalDistance)
+            {
+                if (tileA.tileX > tileB.tileX || tileA.tileX < tileB.tileX)
+                {
+                    newTileC.tileY = tileA.tileY;
+                    newTileD.tileY = tileB.tileY;
+                    newTileC.tileX = Mathf.Abs(tileA.tileX + tileB.tileX) / 2;
+                    newTileD.tileX = Mathf.Abs(tileA.tileX + tileB.tileX) / 2;
+                }
+            }
+        }
+
+        Position pos;
+        List<Position> line = roomCreator.GetLine(tileA, newTileC);
+        for(int i=1; i<line.Count; i++)
+        {
+            pos = new Position(line[i].tileX, line[i].tileY);
+            newPassageList.Add(pos);
+        }
+        line = roomCreator.GetLine(newTileC, newTileD);
+        foreach (Position position in line)
+        {
+            newPassageList.Add(new Position(position.tileX, position.tileY));
+        }
+        line = roomCreator.GetLine(newTileD, tileB);
+        for (int j = 0; j < line.Count; j++)
+        {
+            pos = new Position(line[j].tileX, line[j].tileY);
+            newPassageList.Add(pos);
+        }
+
+        foreach(Position position in newPassageList)
+        {
+            passageTiles.Add(position);
+        }
+
+        //add extra wall tiles here for current passage
+        WallPassages(newPassageList, passageWalls);
+    }
+
+    void WallPassages(List<Position> passageList, List<Position> wallList)
+    {
+        Position prevTile=passageList[0];
+        Position currTile = passageList[1];
+        Position nextTile=passageList[passageList.Count - 1];
+        int accumulation = 0;
+
+        accumulation = GetAccumulation(prevTile, currTile);
+
+        CheckAccumulation(accumulation, passageList, wallList, prevTile);
+
+        currTile = passageList[passageList.Count - 2];
+
+        accumulation = GetAccumulation(currTile, nextTile);
+
+        CheckAccumulation(accumulation, passageList, wallList, nextTile);
+
+        for (int i = 1; i < passageList.Count-1; i++)
+        {
+            accumulation = 0;
+            currTile = passageList[i];
+            nextTile = passageList[i + 1];
+
+            accumulation = GetAccumulation(prevTile, currTile, nextTile);
+
+            CheckAccumulation(accumulation, passageList, wallList, currTile);
+
+            prevTile = currTile;
+        }
+    }
+
+    int GetAccumulation(Position prevTile, Position currTile, Position nextTile)
+    {
+        int accumulation = 0;
+        if (prevTile.tileX == currTile.tileX)
+        {
+            if (prevTile.tileY > currTile.tileY)
+            {
+                accumulation += 2;
+            }
+            else
+            {
+                accumulation += 8;
+            }
+        }
+        else
+        {
+            if (prevTile.tileX > currTile.tileX)
+            {
+                accumulation += 4;
+            }
+            else
+            {
+                accumulation += 1;
+            }
+        }
+
+
+        if (currTile.tileX == nextTile.tileX)
+        {
+            if (nextTile.tileY > currTile.tileY)
+            {
+                accumulation += 2;
+            }
+            else
+            {
+                accumulation += 8;
+            }
+        }
+        else
+        {
+            if (nextTile.tileX > currTile.tileX)
+            {
+                accumulation += 4;
+            }
+            else
+            {
+                accumulation += 1;
+            }
+        }
+
+        return accumulation;
+    }
+
+    int GetAccumulation(Position aTile, Position bTile)
+    {
+        int accumulation = 0;
+
+        if (aTile.tileX == bTile.tileX)
+        {
+            if (aTile.tileY > bTile.tileY)
+            {
+                accumulation += 2;
+            }
+            else
+            {
+                accumulation += 8;
+            }
+        }
+        else
+        {
+            if (aTile.tileX > bTile.tileX)
+            {
+                accumulation += 4;
+            }
+            else
+            {
+                accumulation += 1;
+            }
+        }
+
+        return accumulation;
+    }
+
+    void CheckAccumulation(int accumulation, List<Position> passageList, List<Position> wallList, Position currTile)
+    {
+        switch (accumulation)
+        {
+            case 1:
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY + 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY - 1));
+                }
+                break;
+            case 2:
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY));
+                }
+                break;
+            case 4:
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY + 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY - 1));
+                }
+                break;
+            case 8:
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY));
+                }
+                break;
+            case 3:
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY - 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY - 1));
+                }
+                break;
+            case 6:
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY - 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY - 1));
+                }
+                break;
+            case 9:
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY + 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY + 1));
+                }
+                break;
+            case 10:
+                if (!passageList.Contains(new Position(currTile.tileX + 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX + 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY));
+                }
+                break;
+            case 5:
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY + 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY - 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY - 1));
+                }
+                break;
+            case 12:
+                if (!passageList.Contains(new Position(currTile.tileX, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX, currTile.tileY + 1));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY));
+                }
+                if (!passageList.Contains(new Position(currTile.tileX - 1, currTile.tileY + 1)))
+                {
+                    wallList.Add(new Position(currTile.tileX - 1, currTile.tileY + 1));
+                }
+                break;
+        }
+    }
+
+    Vector3 PosToWorldPoint(Position tile)
+    {
+        //simple calculation to get distance, no SQRT in order to avoid memory usage
+        return new Vector3(tile.tileX, tile.tileY);
+    }
+
+    void WallOffEntrance(Room roomA, Room roomB, Position entryTileA, Position entryTileB)
+    {
+        int horizontalDistance = 0, verticalDistance = 0;
+        horizontalDistance = Mathf.Abs(entryTileA.tileX - entryTileB.tileX);
+        verticalDistance = Mathf.Abs(entryTileA.tileY - entryTileB.tileY);
+        int aX=0, aY=0,bX=0,bY=0;
+
+        if (horizontalDistance>verticalDistance)
+        {
+            if(entryTileA.tileX<entryTileB.tileX)
+            {
+                aX = entryTileA.tileX + 1;
+                aY = entryTileA.tileY;
+                bX = entryTileB.tileX - 1;
+                bY = entryTileB.tileY;
+                roomA.roomTiles[aX-roomA.originX, aY-roomA.originY] = Tiletype.Null;
+                roomB.roomTiles[bX-roomB.originX, bY-roomB.originY] = Tiletype.Null;
+                roomA.wallTiles.Remove(new Position(aX - roomA.originX, aY - roomA.originY));
+                roomB.wallTiles.Remove(new Position(bX - roomB.originX, bY - roomB.originY));
+            }      
+            else
+            {
+                aX = entryTileA.tileX - 1;
+                aY = entryTileA.tileY;
+                bX = entryTileB.tileX + 1;
+                bY = entryTileB.tileY;
+                roomA.roomTiles[aX - roomA.originX, aY - roomA.originY] = Tiletype.Null;
+                roomB.roomTiles[bX - roomB.originX, bY - roomB.originY] = Tiletype.Null;
+                roomA.wallTiles.Remove(new Position(aX - roomA.originX, aY - roomA.originY));
+                roomB.wallTiles.Remove(new Position(bX - roomB.originX, bY - roomB.originY));
+            }
+        }
+        else
+        {
+            if (entryTileA.tileY < entryTileB.tileY)
+            {
+                aX = entryTileA.tileX;
+                aY = entryTileA.tileY+1;
+                bX = entryTileB.tileX;
+                bY = entryTileB.tileY-1;
+                roomA.roomTiles[aX - roomA.originX, aY - roomA.originY] = Tiletype.Null;
+                roomB.roomTiles[bX - roomB.originX, bY - roomB.originY] = Tiletype.Null;
+                roomA.wallTiles.Remove(new Position(aX - roomA.originX, aY - roomA.originY));
+                roomB.wallTiles.Remove(new Position(bX - roomB.originX, bY - roomB.originY));
+            }
+            else
+            {
+                aX = entryTileA.tileY;
+                aY = entryTileA.tileY-1;
+                bX = entryTileB.tileX;
+                bY = entryTileB.tileY+1;
+                roomA.roomTiles[aX-roomA.originX, aY - roomA.originY] = Tiletype.Null;
+                roomB.roomTiles[bX - roomB.originX, bY - roomB.originY] = Tiletype.Null;
+                roomA.wallTiles.Remove(new Position(aX - roomA.originX, aY - roomA.originY));
+                roomB.wallTiles.Remove(new Position(bX - roomB.originX, bY - roomB.originY));
             }
         }
     }

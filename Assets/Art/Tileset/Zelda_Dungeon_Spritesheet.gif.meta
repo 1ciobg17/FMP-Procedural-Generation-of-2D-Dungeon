@@ -1,0 +1,4886 @@
+fileFormatVersion: 2
+guid: 09cf51e89c8fbc24a9fe56b7bf283793
+timeCreated: 1492510308
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Zelda_Dungeon_Spritesheet_0
+    21300002: Zelda_Dungeon_Spritesheet_1
+    21300004: Zelda_Dungeon_Spritesheet_2
+    21300006: Zelda_Dungeon_Spritesheet_3
+    21300008: Zelda_Dungeon_Spritesheet_4
+    21300010: Zelda_Dungeon_Spritesheet_5
+    21300012: Zelda_Dungeon_Spritesheet_6
+    21300014: Zelda_Dungeon_Spritesheet_7
+    21300016: Zelda_Dungeon_Spritesheet_8
+    21300018: Zelda_Dungeon_Spritesheet_9
+    21300020: Zelda_Dungeon_Spritesheet_10
+    21300022: Zelda_Dungeon_Spritesheet_11
+    21300024: Zelda_Dungeon_Spritesheet_12
+    21300026: Zelda_Dungeon_Spritesheet_13
+    21300028: Zelda_Dungeon_Spritesheet_14
+    21300030: Zelda_Dungeon_Spritesheet_15
+    21300032: Zelda_Dungeon_Spritesheet_16
+    21300034: Zelda_Dungeon_Spritesheet_17
+    21300036: Zelda_Dungeon_Spritesheet_18
+    21300038: Zelda_Dungeon_Spritesheet_19
+    21300040: Zelda_Dungeon_Spritesheet_20
+    21300042: Zelda_Dungeon_Spritesheet_21
+    21300044: Zelda_Dungeon_Spritesheet_22
+    21300046: Zelda_Dungeon_Spritesheet_23
+    21300048: Zelda_Dungeon_Spritesheet_24
+    21300050: Zelda_Dungeon_Spritesheet_25
+    21300052: Zelda_Dungeon_Spritesheet_26
+    21300054: Zelda_Dungeon_Spritesheet_27
+    21300056: Zelda_Dungeon_Spritesheet_28
+    21300058: Zelda_Dungeon_Spritesheet_29
+    21300060: Zelda_Dungeon_Spritesheet_30
+    21300062: Zelda_Dungeon_Spritesheet_31
+    21300064: Zelda_Dungeon_Spritesheet_32
+    21300066: Zelda_Dungeon_Spritesheet_33
+    21300068: Zelda_Dungeon_Spritesheet_34
+    21300070: Zelda_Dungeon_Spritesheet_35
+    21300072: Zelda_Dungeon_Spritesheet_36
+    21300074: Zelda_Dungeon_Spritesheet_37
+    21300076: Zelda_Dungeon_Spritesheet_38
+    21300078: Zelda_Dungeon_Spritesheet_39
+    21300080: Zelda_Dungeon_Spritesheet_40
+    21300082: Zelda_Dungeon_Spritesheet_41
+    21300084: Zelda_Dungeon_Spritesheet_42
+    21300086: Zelda_Dungeon_Spritesheet_43
+    21300088: Zelda_Dungeon_Spritesheet_44
+    21300090: Zelda_Dungeon_Spritesheet_45
+    21300092: Zelda_Dungeon_Spritesheet_46
+    21300094: Zelda_Dungeon_Spritesheet_47
+    21300096: Zelda_Dungeon_Spritesheet_48
+    21300098: Zelda_Dungeon_Spritesheet_49
+    21300100: Zelda_Dungeon_Spritesheet_50
+    21300102: Zelda_Dungeon_Spritesheet_51
+    21300104: Zelda_Dungeon_Spritesheet_52
+    21300106: Zelda_Dungeon_Spritesheet_53
+    21300108: Zelda_Dungeon_Spritesheet_54
+    21300110: Zelda_Dungeon_Spritesheet_55
+    21300112: Zelda_Dungeon_Spritesheet_56
+    21300114: Zelda_Dungeon_Spritesheet_57
+    21300116: Zelda_Dungeon_Spritesheet_58
+    21300118: Zelda_Dungeon_Spritesheet_59
+    21300120: Zelda_Dungeon_Spritesheet_60
+    21300122: Zelda_Dungeon_Spritesheet_61
+    21300124: Zelda_Dungeon_Spritesheet_62
+    21300126: Zelda_Dungeon_Spritesheet_63
+    21300128: Zelda_Dungeon_Spritesheet_64
+    21300130: Zelda_Dungeon_Spritesheet_65
+    21300132: Zelda_Dungeon_Spritesheet_66
+    21300134: Zelda_Dungeon_Spritesheet_67
+    21300136: Zelda_Dungeon_Spritesheet_68
+    21300138: Zelda_Dungeon_Spritesheet_69
+    21300140: Zelda_Dungeon_Spritesheet_70
+    21300142: Zelda_Dungeon_Spritesheet_71
+    21300144: Zelda_Dungeon_Spritesheet_72
+    21300146: Zelda_Dungeon_Spritesheet_73
+    21300148: Zelda_Dungeon_Spritesheet_74
+    21300150: Zelda_Dungeon_Spritesheet_75
+    21300152: Zelda_Dungeon_Spritesheet_76
+    21300154: Zelda_Dungeon_Spritesheet_77
+    21300156: Zelda_Dungeon_Spritesheet_78
+    21300158: Zelda_Dungeon_Spritesheet_79
+    21300160: Zelda_Dungeon_Spritesheet_80
+    21300162: Zelda_Dungeon_Spritesheet_81
+    21300164: Zelda_Dungeon_Spritesheet_82
+    21300166: Zelda_Dungeon_Spritesheet_83
+    21300168: Zelda_Dungeon_Spritesheet_84
+    21300170: Zelda_Dungeon_Spritesheet_85
+    21300172: Zelda_Dungeon_Spritesheet_86
+    21300174: Zelda_Dungeon_Spritesheet_87
+    21300176: Zelda_Dungeon_Spritesheet_88
+    21300178: Zelda_Dungeon_Spritesheet_89
+    21300180: Zelda_Dungeon_Spritesheet_90
+    21300182: Zelda_Dungeon_Spritesheet_91
+    21300184: Zelda_Dungeon_Spritesheet_92
+    21300186: Zelda_Dungeon_Spritesheet_93
+    21300188: Zelda_Dungeon_Spritesheet_94
+    21300190: Zelda_Dungeon_Spritesheet_95
+    21300192: Zelda_Dungeon_Spritesheet_96
+    21300194: Zelda_Dungeon_Spritesheet_97
+    21300196: Zelda_Dungeon_Spritesheet_98
+    21300198: Zelda_Dungeon_Spritesheet_99
+    21300200: Zelda_Dungeon_Spritesheet_100
+    21300202: Zelda_Dungeon_Spritesheet_101
+    21300204: Zelda_Dungeon_Spritesheet_102
+    21300206: Zelda_Dungeon_Spritesheet_103
+    21300208: Zelda_Dungeon_Spritesheet_104
+    21300210: Zelda_Dungeon_Spritesheet_105
+    21300212: Zelda_Dungeon_Spritesheet_106
+    21300214: Zelda_Dungeon_Spritesheet_107
+    21300216: Zelda_Dungeon_Spritesheet_108
+    21300218: Zelda_Dungeon_Spritesheet_109
+    21300220: Zelda_Dungeon_Spritesheet_110
+    21300222: Zelda_Dungeon_Spritesheet_111
+    21300224: Zelda_Dungeon_Spritesheet_112
+    21300226: Zelda_Dungeon_Spritesheet_113
+    21300228: Zelda_Dungeon_Spritesheet_114
+    21300230: Zelda_Dungeon_Spritesheet_115
+    21300232: Zelda_Dungeon_Spritesheet_116
+    21300234: Zelda_Dungeon_Spritesheet_117
+    21300236: Zelda_Dungeon_Spritesheet_118
+    21300238: Zelda_Dungeon_Spritesheet_119
+    21300240: Zelda_Dungeon_Spritesheet_120
+    21300242: Zelda_Dungeon_Spritesheet_121
+    21300244: Zelda_Dungeon_Spritesheet_122
+    21300246: Zelda_Dungeon_Spritesheet_123
+    21300248: Zelda_Dungeon_Spritesheet_124
+    21300250: Zelda_Dungeon_Spritesheet_125
+    21300252: Zelda_Dungeon_Spritesheet_126
+    21300254: Zelda_Dungeon_Spritesheet_127
+    21300256: Zelda_Dungeon_Spritesheet_128
+    21300258: Zelda_Dungeon_Spritesheet_129
+    21300260: Zelda_Dungeon_Spritesheet_130
+    21300262: Zelda_Dungeon_Spritesheet_131
+    21300264: Zelda_Dungeon_Spritesheet_132
+    21300266: Zelda_Dungeon_Spritesheet_133
+    21300268: Zelda_Dungeon_Spritesheet_134
+    21300270: Zelda_Dungeon_Spritesheet_135
+    21300272: Zelda_Dungeon_Spritesheet_136
+    21300274: Zelda_Dungeon_Spritesheet_137
+    21300276: Zelda_Dungeon_Spritesheet_138
+    21300278: Zelda_Dungeon_Spritesheet_139
+    21300280: Zelda_Dungeon_Spritesheet_140
+    21300282: Zelda_Dungeon_Spritesheet_141
+    21300284: Zelda_Dungeon_Spritesheet_142
+    21300286: Zelda_Dungeon_Spritesheet_143
+    21300288: Zelda_Dungeon_Spritesheet_144
+    21300290: Zelda_Dungeon_Spritesheet_145
+    21300292: Zelda_Dungeon_Spritesheet_146
+    21300294: Zelda_Dungeon_Spritesheet_147
+    21300296: Zelda_Dungeon_Spritesheet_148
+    21300298: Zelda_Dungeon_Spritesheet_149
+    21300300: Zelda_Dungeon_Spritesheet_150
+    21300302: Zelda_Dungeon_Spritesheet_151
+    21300304: Zelda_Dungeon_Spritesheet_152
+    21300306: Zelda_Dungeon_Spritesheet_153
+    21300308: Zelda_Dungeon_Spritesheet_154
+    21300310: Zelda_Dungeon_Spritesheet_155
+    21300312: Zelda_Dungeon_Spritesheet_156
+    21300314: Zelda_Dungeon_Spritesheet_157
+    21300316: Zelda_Dungeon_Spritesheet_158
+    21300318: Zelda_Dungeon_Spritesheet_159
+    21300320: Zelda_Dungeon_Spritesheet_160
+    21300322: Zelda_Dungeon_Spritesheet_161
+    21300324: Zelda_Dungeon_Spritesheet_162
+    21300326: Zelda_Dungeon_Spritesheet_163
+    21300328: Zelda_Dungeon_Spritesheet_164
+    21300330: Zelda_Dungeon_Spritesheet_165
+    21300332: Zelda_Dungeon_Spritesheet_166
+    21300334: Zelda_Dungeon_Spritesheet_167
+    21300336: Zelda_Dungeon_Spritesheet_168
+    21300338: Zelda_Dungeon_Spritesheet_169
+    21300340: Zelda_Dungeon_Spritesheet_170
+    21300342: Zelda_Dungeon_Spritesheet_171
+    21300344: Zelda_Dungeon_Spritesheet_172
+    21300346: Zelda_Dungeon_Spritesheet_173
+    21300348: Zelda_Dungeon_Spritesheet_174
+    21300350: Zelda_Dungeon_Spritesheet_175
+    21300352: Zelda_Dungeon_Spritesheet_176
+    21300354: Zelda_Dungeon_Spritesheet_177
+    21300356: Zelda_Dungeon_Spritesheet_178
+    21300358: Zelda_Dungeon_Spritesheet_179
+    21300360: Zelda_Dungeon_Spritesheet_180
+    21300362: Zelda_Dungeon_Spritesheet_181
+    21300364: Zelda_Dungeon_Spritesheet_182
+    21300366: Zelda_Dungeon_Spritesheet_183
+    21300368: Zelda_Dungeon_Spritesheet_184
+    21300370: Zelda_Dungeon_Spritesheet_185
+    21300372: Zelda_Dungeon_Spritesheet_186
+    21300374: Zelda_Dungeon_Spritesheet_187
+    21300376: Zelda_Dungeon_Spritesheet_188
+    21300378: Zelda_Dungeon_Spritesheet_189
+    21300380: Zelda_Dungeon_Spritesheet_190
+    21300382: Zelda_Dungeon_Spritesheet_191
+    21300384: Zelda_Dungeon_Spritesheet_192
+    21300386: Zelda_Dungeon_Spritesheet_193
+    21300388: Zelda_Dungeon_Spritesheet_194
+    21300390: Zelda_Dungeon_Spritesheet_195
+    21300392: Zelda_Dungeon_Spritesheet_196
+    21300394: Zelda_Dungeon_Spritesheet_197
+    21300396: Zelda_Dungeon_Spritesheet_198
+    21300398: Zelda_Dungeon_Spritesheet_199
+    21300400: Zelda_Dungeon_Spritesheet_200
+    21300402: Zelda_Dungeon_Spritesheet_201
+    21300404: Zelda_Dungeon_Spritesheet_202
+    21300406: Zelda_Dungeon_Spritesheet_203
+    21300408: Zelda_Dungeon_Spritesheet_204
+    21300410: Zelda_Dungeon_Spritesheet_205
+    21300412: Zelda_Dungeon_Spritesheet_206
+    21300414: Zelda_Dungeon_Spritesheet_207
+    21300416: Zelda_Dungeon_Spritesheet_208
+    21300418: Zelda_Dungeon_Spritesheet_209
+    21300420: Zelda_Dungeon_Spritesheet_210
+    21300422: Zelda_Dungeon_Spritesheet_211
+    21300424: Zelda_Dungeon_Spritesheet_212
+    21300426: Zelda_Dungeon_Spritesheet_213
+    21300428: Zelda_Dungeon_Spritesheet_214
+    21300430: Zelda_Dungeon_Spritesheet_215
+    21300432: Zelda_Dungeon_Spritesheet_216
+    21300434: Zelda_Dungeon_Spritesheet_217
+    21300436: Zelda_Dungeon_Spritesheet_218
+    21300438: Zelda_Dungeon_Spritesheet_219
+    21300440: Zelda_Dungeon_Spritesheet_220
+    21300442: Zelda_Dungeon_Spritesheet_221
+    21300444: Zelda_Dungeon_Spritesheet_222
+    21300446: Zelda_Dungeon_Spritesheet_223
+    21300448: Zelda_Dungeon_Spritesheet_224
+    21300450: Zelda_Dungeon_Spritesheet_225
+    21300452: Zelda_Dungeon_Spritesheet_226
+    21300454: Zelda_Dungeon_Spritesheet_227
+    21300456: Zelda_Dungeon_Spritesheet_228
+    21300458: Zelda_Dungeon_Spritesheet_229
+    21300460: Zelda_Dungeon_Spritesheet_230
+    21300462: Zelda_Dungeon_Spritesheet_231
+    21300464: Zelda_Dungeon_Spritesheet_232
+    21300466: Zelda_Dungeon_Spritesheet_233
+    21300468: Zelda_Dungeon_Spritesheet_234
+    21300470: Zelda_Dungeon_Spritesheet_235
+    21300472: Zelda_Dungeon_Spritesheet_236
+    21300474: Zelda_Dungeon_Spritesheet_237
+    21300476: Zelda_Dungeon_Spritesheet_238
+    21300478: Zelda_Dungeon_Spritesheet_239
+    21300480: Zelda_Dungeon_Spritesheet_240
+    21300482: Zelda_Dungeon_Spritesheet_241
+    21300484: Zelda_Dungeon_Spritesheet_242
+    21300486: Zelda_Dungeon_Spritesheet_243
+    21300488: Zelda_Dungeon_Spritesheet_244
+    21300490: Zelda_Dungeon_Spritesheet_245
+    21300492: Zelda_Dungeon_Spritesheet_246
+    21300494: Zelda_Dungeon_Spritesheet_247
+    21300496: Zelda_Dungeon_Spritesheet_248
+    21300498: Zelda_Dungeon_Spritesheet_249
+    21300500: Zelda_Dungeon_Spritesheet_250
+    21300502: Zelda_Dungeon_Spritesheet_251
+    21300504: Zelda_Dungeon_Spritesheet_252
+    21300506: Zelda_Dungeon_Spritesheet_253
+    21300508: Zelda_Dungeon_Spritesheet_254
+    21300510: Zelda_Dungeon_Spritesheet_255
+    21300512: Zelda_Dungeon_Spritesheet_256
+    21300514: Zelda_Dungeon_Spritesheet_257
+    21300516: Zelda_Dungeon_Spritesheet_258
+    21300518: Zelda_Dungeon_Spritesheet_259
+    21300520: Zelda_Dungeon_Spritesheet_260
+    21300522: Zelda_Dungeon_Spritesheet_261
+    21300524: Zelda_Dungeon_Spritesheet_262
+    21300526: Zelda_Dungeon_Spritesheet_263
+    21300528: Zelda_Dungeon_Spritesheet_264
+    21300530: Zelda_Dungeon_Spritesheet_265
+    21300532: Zelda_Dungeon_Spritesheet_266
+    21300534: Zelda_Dungeon_Spritesheet_267
+    21300536: Zelda_Dungeon_Spritesheet_268
+    21300538: Zelda_Dungeon_Spritesheet_269
+    21300540: Zelda_Dungeon_Spritesheet_270
+    21300542: Zelda_Dungeon_Spritesheet_271
+    21300544: Zelda_Dungeon_Spritesheet_272
+    21300546: Zelda_Dungeon_Spritesheet_273
+    21300548: Zelda_Dungeon_Spritesheet_274
+    21300550: Zelda_Dungeon_Spritesheet_275
+    21300552: Zelda_Dungeon_Spritesheet_276
+    21300554: Zelda_Dungeon_Spritesheet_277
+    21300556: Zelda_Dungeon_Spritesheet_278
+    21300558: Zelda_Dungeon_Spritesheet_279
+    21300560: Zelda_Dungeon_Spritesheet_280
+    21300562: Zelda_Dungeon_Spritesheet_281
+    21300564: Zelda_Dungeon_Spritesheet_282
+    21300566: Zelda_Dungeon_Spritesheet_283
+    21300568: Zelda_Dungeon_Spritesheet_284
+    21300570: Zelda_Dungeon_Spritesheet_285
+    21300572: Zelda_Dungeon_Spritesheet_286
+    21300574: Zelda_Dungeon_Spritesheet_287
+    21300576: Zelda_Dungeon_Spritesheet_288
+    21300578: Zelda_Dungeon_Spritesheet_289
+    21300580: Zelda_Dungeon_Spritesheet_290
+    21300582: Zelda_Dungeon_Spritesheet_291
+    21300584: Zelda_Dungeon_Spritesheet_292
+    21300586: Zelda_Dungeon_Spritesheet_293
+    21300588: Zelda_Dungeon_Spritesheet_294
+    21300590: Zelda_Dungeon_Spritesheet_295
+    21300592: Zelda_Dungeon_Spritesheet_296
+    21300594: Zelda_Dungeon_Spritesheet_297
+    21300596: Zelda_Dungeon_Spritesheet_298
+    21300598: Zelda_Dungeon_Spritesheet_299
+    21300600: Zelda_Dungeon_Spritesheet_300
+    21300602: Zelda_Dungeon_Spritesheet_301
+    21300604: Zelda_Dungeon_Spritesheet_302
+    21300606: Zelda_Dungeon_Spritesheet_303
+    21300608: Zelda_Dungeon_Spritesheet_304
+    21300610: Zelda_Dungeon_Spritesheet_305
+    21300612: Zelda_Dungeon_Spritesheet_306
+    21300614: Zelda_Dungeon_Spritesheet_307
+    21300616: Zelda_Dungeon_Spritesheet_308
+    21300618: Zelda_Dungeon_Spritesheet_309
+    21300620: Zelda_Dungeon_Spritesheet_310
+    21300622: Zelda_Dungeon_Spritesheet_311
+    21300624: Zelda_Dungeon_Spritesheet_312
+    21300626: Zelda_Dungeon_Spritesheet_313
+    21300628: Zelda_Dungeon_Spritesheet_314
+    21300630: Zelda_Dungeon_Spritesheet_315
+    21300632: Zelda_Dungeon_Spritesheet_316
+    21300634: Zelda_Dungeon_Spritesheet_317
+    21300636: Zelda_Dungeon_Spritesheet_318
+    21300638: Zelda_Dungeon_Spritesheet_319
+    21300640: Zelda_Dungeon_Spritesheet_320
+    21300642: Zelda_Dungeon_Spritesheet_321
+    21300644: Zelda_Dungeon_Spritesheet_322
+    21300646: Zelda_Dungeon_Spritesheet_323
+    21300648: Zelda_Dungeon_Spritesheet_324
+    21300650: Zelda_Dungeon_Spritesheet_325
+    21300652: Zelda_Dungeon_Spritesheet_326
+    21300654: Zelda_Dungeon_Spritesheet_327
+    21300656: Zelda_Dungeon_Spritesheet_328
+    21300658: Zelda_Dungeon_Spritesheet_329
+    21300660: Zelda_Dungeon_Spritesheet_330
+    21300662: Zelda_Dungeon_Spritesheet_331
+    21300664: Zelda_Dungeon_Spritesheet_332
+    21300666: Zelda_Dungeon_Spritesheet_333
+    21300668: Zelda_Dungeon_Spritesheet_334
+    21300670: Zelda_Dungeon_Spritesheet_335
+    21300672: Zelda_Dungeon_Spritesheet_336
+    21300674: Zelda_Dungeon_Spritesheet_337
+    21300676: Zelda_Dungeon_Spritesheet_338
+    21300678: Zelda_Dungeon_Spritesheet_339
+    21300680: Zelda_Dungeon_Spritesheet_340
+    21300682: Zelda_Dungeon_Spritesheet_341
+    21300684: Zelda_Dungeon_Spritesheet_342
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 739
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 879
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 879
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 879
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 879
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 739
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 879
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 879
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 879
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 879
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 842
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 842
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 842
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 842
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 842
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 842
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 842
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 842
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 805
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 805
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 805
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 805
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 805
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 805
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 805
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 805
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 786
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 789
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 789
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 789
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 786
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 785
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 789
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 789
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 789
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 766
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 747
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 564
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 704
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 704
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 704
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 704
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 564
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 704
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 704
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 704
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 704
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 667
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 667
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 667
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 667
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 667
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 667
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 667
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 667
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 630
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 630
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 630
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 630
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 630
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 630
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 630
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 630
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 611
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 614
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 614
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 614
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 611
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 610
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_118
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_119
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_120
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 613
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_121
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_122
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_123
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_124
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 613
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_125
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 613
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_126
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_127
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_128
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_129
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_130
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_131
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_132
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_133
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_134
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_135
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_136
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_137
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 591
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_138
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_139
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_140
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_141
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_142
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_143
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_144
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_145
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_146
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_147
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_148
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_149
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_150
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_151
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 572
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_152
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_153
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 527
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_154
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 527
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_155
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 527
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_156
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 527
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_157
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 387
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_158
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 527
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_159
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 527
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_160
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 527
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_161
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 527
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_162
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 490
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_163
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 490
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_164
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 490
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_165
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 490
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_166
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 490
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_167
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 490
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_168
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 490
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_169
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 490
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_170
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 453
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_171
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 453
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_172
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 453
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_173
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 453
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_174
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 453
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_175
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 453
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_176
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 453
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_177
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 453
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_178
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_179
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_180
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 434
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_181
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_182
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_183
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_184
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 437
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_185
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_186
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_187
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_188
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 437
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_189
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 437
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_190
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_191
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_192
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 434
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_193
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 433
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_194
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_195
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_196
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 436
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_197
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_198
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_199
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_200
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 436
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_201
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_202
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_203
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_204
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_205
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_206
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_207
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_208
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_209
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_210
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_211
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_212
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_213
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 414
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_214
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_215
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_216
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_217
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_218
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_219
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_220
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_221
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_222
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_223
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_224
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_225
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_226
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_227
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 395
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_228
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_229
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 330
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_230
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 330
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_231
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 330
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_232
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 330
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_233
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 190
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_234
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 330
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_235
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 330
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_236
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 330
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_237
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 330
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_238
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 293
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_239
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 293
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_240
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 293
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_241
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 293
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_242
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 293
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_243
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 293
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_244
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 293
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_245
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 293
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_246
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 256
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_247
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 256
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_248
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 256
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_249
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 256
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_250
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 256
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_251
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 256
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_252
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 256
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_253
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 256
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_254
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_255
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_256
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 237
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_257
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_258
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_259
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_260
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 240
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_261
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_262
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_263
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_264
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 240
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_265
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 240
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_266
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_267
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_268
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 237
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_269
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 236
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_270
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_271
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_272
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 240
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_273
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_274
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_275
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_276
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 240
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_277
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 240
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_278
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_279
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_280
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_281
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_282
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_283
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_284
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_285
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_286
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_287
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_288
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_289
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 217
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_290
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_291
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_292
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_293
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_294
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_295
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_296
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_297
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_298
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_299
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_300
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_301
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_302
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_303
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 198
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_304
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 157
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_305
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_306
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 140
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_307
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 140
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_308
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 140
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_309
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 140
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_310
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 103
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_311
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 103
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_312
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 103
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_313
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 103
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_314
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 66
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_315
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 66
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_316
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 66
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_317
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 66
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_318
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_319
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_320
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 47
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_321
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 46
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_322
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_323
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_324
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_325
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_326
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_327
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_328
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_329
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_330
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_331
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_332
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_333
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_334
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_335
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 27
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_336
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_337
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_338
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_339
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_340
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_341
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zelda_Dungeon_Spritesheet_342
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
