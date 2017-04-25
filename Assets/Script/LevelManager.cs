@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour {
     List<Position> passageWalls;
     List<Region> currentRegions;
     public RoomCreation roomCreator;
+    public GameManager gameManager;
     Tiletype[,] tiles;
     List<Section> sections;
 
@@ -33,6 +34,8 @@ public class LevelManager : MonoBehaviour {
         ConnectSectionRooms();
 
         Draw();
+
+        gameManager.SetRoomList(allRooms);
     }
 
     //create rooms out of sections
@@ -169,6 +172,7 @@ public class LevelManager : MonoBehaviour {
 
         roomA.roomTiles[bestTileA.tileX - roomA.originX, bestTileA.tileY - roomA.originY] = Tiletype.Entry;
         roomB.roomTiles[bestTileB.tileX - roomB.originX, bestTileB.tileY - roomB.originY] = Tiletype.Entry;
+        UpdateRoomNeighbours(roomA, roomB);
         WallOffEntrance(roomA, roomB, bestTileA, bestTileB);
 
         DeterminePassageWay(bestTileA, bestTileB);
@@ -654,6 +658,21 @@ public class LevelManager : MonoBehaviour {
                 roomB.roomTiles[bX - roomB.originX, bY - roomB.originY] = Tiletype.Null;
                 roomA.wallTiles.Remove(new Position(aX - roomA.originX, aY - roomA.originY));
                 roomB.wallTiles.Remove(new Position(bX - roomB.originX, bY - roomB.originY));
+            }
+        }
+    }
+
+    void UpdateRoomNeighbours(Room roomA, Room roomB)
+    {
+        for(int i=0; i<allRooms.Count; i++)
+        {
+            if(allRooms[i].originX==roomA.originX && allRooms[i].originY==roomA.originY)
+            {
+                allRooms[i].AddNeighbours(roomB);
+            }
+            if(allRooms[i].originX==roomB.originX && allRooms[i].originY==roomB.originY)
+            {
+                allRooms[i].AddNeighbours(roomA);
             }
         }
     }

@@ -46,12 +46,18 @@ public class Room
     public int height;
     public int width;
     //all the tiles in a room
+    [NonSerialized]
     public Tiletype[,] roomTiles;
     //all the tiles separated in regions
+    [NonSerialized]
     public List<Region> regionList;
     //all the wall tiles that surround the room
+    [NonSerialized]
     public List<Position> wallTiles;
+    [NonSerialized]
     public List<GameObject> entryTiles;
+    [NonSerialized]
+    public List<Room> neighbouringRooms;
 
     public Room()
     {
@@ -70,6 +76,7 @@ public class Room
         regionList = regions;
         wallTiles = new List<Position>();
         entryTiles = new List<GameObject>();
+        neighbouringRooms = new List<Room>();
     }
 
     //soemthing to change the room position if needed
@@ -119,6 +126,11 @@ public class Room
                 }
             }
         }
+    }
+
+    public void AddNeighbours(Room room)
+    {
+        neighbouringRooms.Add(room);
     }
 }
 
