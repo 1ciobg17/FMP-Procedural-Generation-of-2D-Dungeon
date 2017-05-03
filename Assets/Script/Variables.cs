@@ -10,6 +10,36 @@ public enum Tiletype
     Wall, Floor, Connector, Entry, Null,
 }
 
+[Serializable]
+public enum RoomQuest
+{
+    DestroyOrbs, KillEnemies, Null,
+}
+
+//entities that can be found in a level
+[Serializable]
+public enum EntityType
+{
+    DungeonEntry, DungeonExit, MagicOrb, Enemy, Key, Null,
+}
+
+[Serializable]
+public struct Entity
+{
+    public int originX;
+    public int originY;
+    public EntityType entityType;
+    public Room parentRoom;
+
+    public Entity(int X, int Y, EntityType type, Room room)
+    {
+        originX = X;
+        originY = Y;
+        entityType = type;
+        parentRoom = room;
+    }
+}
+
 //struct used to represent the passages that connect each room
 [Serializable]
 public struct Passage
@@ -58,6 +88,8 @@ public class Room
     public List<GameObject> entryTiles;
     [NonSerialized]
     public List<Room> neighbouringRooms;
+    [NonSerialized]
+    public bool hasBeenVisited = false;
 
     public Room()
     {
@@ -125,6 +157,31 @@ public class Room
                     }
                 }
             }
+        }
+    }
+
+    public void CloseOffRoomExits()
+    {
+        foreach(GameObject tile in entryTiles)
+        {
+            tile.GetComponent<EntryTile>().BlockOffExits();
+            tile.GetComponent<BoxCollider2D>().isTrigger = false;
+        }
+    }
+
+    public void OpenRoomExits()
+    {
+        foreach (GameObject tile in entryTiles)
+        {
+            tile.GetComponent<EntryTile>().OpenExits();
+        }
+    }
+
+    public void PassParentRoom()
+    {
+        foreach(GameObject tile in entryTiles)
+        { 
+            tile.GetComponent<EntryTile>().GetParentRoom(this);
         }
     }
 

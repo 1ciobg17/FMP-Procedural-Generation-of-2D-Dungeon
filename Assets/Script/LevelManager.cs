@@ -9,9 +9,6 @@ public class LevelManager : MonoBehaviour {
     public int maxSectionSize = 30;
     public int SectionWidth=70;
     public int SectionHeight=70;
-    public GameObject wallContainer;//wall is 0, floor is 1
-    public GameObject passageContainer;
-    public GameObject generalContainer;
     public GameObject EntryContainer;
     //the specific sprite for each tile type currently available
     List<Room> allRooms;
@@ -20,6 +17,7 @@ public class LevelManager : MonoBehaviour {
     List<Region> currentRegions;
     public RoomCreation roomCreator;
     public GameManager gameManager;
+    public GraphicsManager graphicsManager;
     Tiletype[,] tiles;
     List<Section> sections;
 
@@ -33,9 +31,11 @@ public class LevelManager : MonoBehaviour {
 
         ConnectSectionRooms();
 
-        Draw();
+        SetUpRoomList();
 
-        gameManager.SetRoomList(allRooms);
+        graphicsManager.AcquireLevelGraphicsData(allRooms, passageTiles, passageWalls);
+
+        gameManager.SetUpGameArea(allRooms);
     }
 
     //create rooms out of sections
@@ -74,66 +74,16 @@ public class LevelManager : MonoBehaviour {
             //generate the room
             roomCreator.GenerateRoom(roomWidth, roomHeight, tiles, ref currentRegions);
             //add it to the room list
-            allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section));
-            allRooms[allRooms.Count - 1].DetermineEnclosingWall();
+            //allRooms.Add(new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section));
+            //allRooms[allRooms.Count - 1].DetermineEnclosingWall();
             //then give it to the section
-            section.insideRoom =new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section);
-            section.insideRoom.wallTiles = allRooms[allRooms.Count - 1].wallTiles;
-        }
-    }
-
-    //draw the rooms, for debug purposes
-    void DrawRoom(Room room)
-    {
-        Vector3 position;
-        //tranverse each tile
-        for (int i = 0; i < room.height; i++)
-        {
-            for (int j = 0; j < room.width; j++)
-            {
-                //get position of the tile by calculating it
-                position = new Vector3(room.originX + i, room.originY + j);
-                if (room.roomTiles[i, j] == Tiletype.Floor)
-                {
-
-                    GameObject.Instantiate(generalContainer, position, Quaternion.identity);
-                }
-                else
-                {
-                    if(room.roomTiles[i,j]==Tiletype.Entry)
-                    {
-                        room.entryTiles.Add(Instantiate(EntryContainer, position, Quaternion.identity));
-                    }
-                }
-            }
-        }
-        foreach (Position wallingTile in room.wallTiles)
-        {
-            position = new Vector3(room.originX + wallingTile.tileX, room.originY + wallingTile.tileY);
-            wallContainer.name = "WallTile_Placeholder";
-            GameObject.Instantiate(wallContainer, position, Quaternion.identity);
-        }
-    }
-
-    //tranverse each tile then draw
-    void DrawPassages()
-    {
-        Vector3 position;
-        for(int i=0; i<passageTiles.Count; i++)
-        {
-            position = new Vector3(passageTiles[i].tileX, passageTiles[i].tileY);
-            passageContainer.gameObject.name = "Passage";
-            GameObject.Instantiate(passageContainer, position, Quaternion.identity);
-        }
-        for(int i=0; i<passageWalls.Count; i++)
-        {
-            position = new Vector3(passageWalls[i].tileX, passageWalls[i].tileY);
-            GameObject.Instantiate(wallContainer, position, Quaternion.identity);
+            section.insideRoom = new Room(xPos, yPos, roomWidth, roomHeight, tiles, currentRegions, section);
+            section.insideRoom.DetermineEnclosingWall();
         }
     }
 
     //very similar to how regions are connected within a room but adapted to these needs
-    void ConnectRegions(Room roomA, Room roomB, int xA, int yA, int xB, int yB)
+    void ConnectRegions(ref Room roomA,ref Room roomB, int xA, int yA, int xB, int yB)
     {
         int bestDistance = 0;
         int distanceBetweenRooms = 0;
@@ -170,8 +120,16 @@ public class LevelManager : MonoBehaviour {
             }
         }
 
+        Vector3 position;
+
         roomA.roomTiles[bestTileA.tileX - roomA.originX, bestTileA.tileY - roomA.originY] = Tiletype.Entry;
+        position = new Vector3(bestTileA.tileX, bestTileA.tileY);
+        roomA.entryTiles.Add(Instantiate(EntryContainer, position, Quaternion.identity));
+        roomA.PassParentRoom();
         roomB.roomTiles[bestTileB.tileX - roomB.originX, bestTileB.tileY - roomB.originY] = Tiletype.Entry;
+        position = new Vector3(bestTileB.tileX, bestTileB.tileY);
+        roomB.entryTiles.Add(Instantiate(EntryContainer, position, Quaternion.identity));
+        roomB.PassParentRoom();
         UpdateRoomNeighbours(roomA, roomB);
         WallOffEntrance(roomA, roomB, bestTileA, bestTileB);
 
@@ -197,15 +155,6 @@ public class LevelManager : MonoBehaviour {
                     right = roomB;
                 }
             }
-        }
-    }
-
-    void Draw()
-    {
-        DrawPassages();
-        foreach (Room room in allRooms)
-        {
-            DrawRoom(room);
         }
     }
 
@@ -288,12 +237,12 @@ public class LevelManager : MonoBehaviour {
                     rightRoom = new Room();
                     GetClosestRooms(sections[i].leftSection.childSectionRooms, sections[i].rightSection.childSectionRooms, ref leftRoom, ref rightRoom);
                     //then connect
-                    ConnectRegions(leftRoom, rightRoom, leftRoom.originX, leftRoom.originY, rightRoom.originX, rightRoom.originY);
+                    ConnectRegions(ref leftRoom,ref rightRoom, leftRoom.originX, leftRoom.originY, rightRoom.originX, rightRoom.originY);
                 }
                 else
                 {
                     //if section has only one room, then just connect them
-                    ConnectRegions(sections[i].leftSection.insideRoom, sections[i].rightSection.insideRoom, sections[i].leftSection.insideRoom.originX, sections[i].leftSection.insideRoom.originY, sections[i].rightSection.insideRoom.originX, sections[i].rightSection.insideRoom.originY);
+                    ConnectRegions(ref sections[i].leftSection.insideRoom,ref sections[i].rightSection.insideRoom, sections[i].leftSection.insideRoom.originX, sections[i].leftSection.insideRoom.originY, sections[i].rightSection.insideRoom.originX, sections[i].rightSection.insideRoom.originY);
                 }
             }
         }
@@ -664,16 +613,15 @@ public class LevelManager : MonoBehaviour {
 
     void UpdateRoomNeighbours(Room roomA, Room roomB)
     {
-        for(int i=0; i<allRooms.Count; i++)
+        roomA.AddNeighbours(roomB);
+        roomB.AddNeighbours(roomA);
+    }
+
+    void SetUpRoomList()
+    {
+        foreach(Room room in sections[0].childSectionRooms)
         {
-            if(allRooms[i].originX==roomA.originX && allRooms[i].originY==roomA.originY)
-            {
-                allRooms[i].AddNeighbours(roomB);
-            }
-            if(allRooms[i].originX==roomB.originX && allRooms[i].originY==roomB.originY)
-            {
-                allRooms[i].AddNeighbours(roomA);
-            }
+            allRooms.Add(room);
         }
     }
 }
