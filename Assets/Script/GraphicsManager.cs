@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Student Name: George Alexandru Ciobanita
+//Student ID: Q11598417
+//Project: FINAL MAJOR PROJECT CGP601
+//Class: GraphicsManager
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -64,6 +68,11 @@ public class GraphicsManager : MonoBehaviour {
                 {
 
                     GameObject.Instantiate(generalContainer, position, Quaternion.identity);
+                }
+                if(room.roomTiles[i,j]==Tiletype.Wall)
+                {
+                    wallContainer.name = "WallTile_Placeholder";
+                    GameObject.Instantiate(wallContainer, position, Quaternion.identity);
                 }
             }
         }

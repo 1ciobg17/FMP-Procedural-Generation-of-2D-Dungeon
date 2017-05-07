@@ -1,6 +1,11 @@
-﻿using System.Collections;
+﻿//Student Name: George Alexandru Ciobanita
+//Student ID: Q11598417
+//Project: FINAL MAJOR PROJECT CGP601
+//Class: RoomCreation
+using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.IO;
 using UnityEngine;
 
 public class RoomCreation : MonoBehaviour
@@ -30,7 +35,7 @@ public class RoomCreation : MonoBehaviour
     int currentChangeOfChange=0;
 
     //room generating function
-    public void GenerateRoom(int W, int H, Tiletype[,] roomArray,ref List<Region> regionList)
+    public void GenerateRoom(int W, int H, ref Tiletype[,] roomArray,ref List<Region> regionList)
     {
         bool check = false;
 
@@ -38,6 +43,7 @@ public class RoomCreation : MonoBehaviour
         height = H;
         originX = 0;
         originY = 0;
+        roomArray = new Tiletype[W, H];
 
         //fill the room with tiles
         RandomPercentFill(roomArray);
@@ -52,7 +58,7 @@ public class RoomCreation : MonoBehaviour
 
         if (!check)
         {
-            GenerateRoom(W, H, roomArray, ref regionList);
+            GenerateRoom(W, H,ref roomArray, ref regionList);
             return;
         }
 
@@ -467,22 +473,22 @@ public class RoomCreation : MonoBehaviour
 
                 //depending on how many walls are around the tile, tiletype may be changed
                 //if a cell is a wall type but does not have enough neighbours
-                if (roomArray[x, y] == (Tiletype)1)
+                if (roomArray[x, y] == Tiletype.Floor)
                 {
                     if (neighbourWallTiles < cellDeath)
                     {
-                        roomArray[x, y] = 0;
+                        roomArray[x, y] = Tiletype.Wall;
                     }
                 }
                 else
                 {
                     if (neighbourWallTiles > cellBirth)
                     {
-                        roomArray[x, y] = (Tiletype)1;
+                        roomArray[x, y] = Tiletype.Floor;
                     }
                     else
                     {
-                        roomArray[x, y] = 0;
+                        roomArray[x, y] = Tiletype.Wall;
                     }
                 }
 
@@ -521,6 +527,7 @@ public class RoomCreation : MonoBehaviour
         return wallCount;
     }
 
+    //room is filled based on a percentange set up in the roombuilder object compared to 100
     void RandomPercentFill(Tiletype[,] roomArray)
     {
         System.Random randomNumberGeneration = new System.Random();
@@ -530,13 +537,15 @@ public class RoomCreation : MonoBehaviour
         {
             for (int j = originY; j < height; j++)
             {
+                //if the tile is located at the edges of a room
                 if (i == 0 || i == width - 1 || j == 0 || j == height - 1)
                 {
-                    roomArray[i, j] = 0;
+                    roomArray[i, j] = Tiletype.Wall;
                 }
                 else
                 {
-                    roomArray[i, j] = (randomNumberGeneration.Next(0, 100) < currentChangeOfChange) ? (Tiletype)1 : 0;
+                    //else it becomes either a wall or a floor
+                    roomArray[i, j] = (randomNumberGeneration.Next(0, 100) < currentChangeOfChange) ? Tiletype.Floor : Tiletype.Wall;
                 }
             }
         }
@@ -556,9 +565,11 @@ public class RoomCreation : MonoBehaviour
         return result;
     }
 
+    //check if the room area has been filled to a certain amount
     bool RoomCheck(Tiletype[,] roomArray)
     {
         int floorCount = 0;
+        //the room area needed to be covered is a minimum determined from its size
         int roomArea = width * height - (2 * height + 2 * (width - 4));
         int percentageToCover = currentChangeOfChange * roomArea / 100;
         percentageToCover = (int)Mathf.Round(percentageToCover);
@@ -574,11 +585,55 @@ public class RoomCreation : MonoBehaviour
             }
         }
 
+        //if the total count of tiles is not higher than the tile count needed to cover a certain area then start again and make a new room until it fits the requirements
         if(floorCount>=percentageToCover)
         {
             return true;
         }
 
         return false;
+    }
+
+    //the option to generate a room from a file
+    //this will also set a custom room Width and Height within the section bounds, sections will be discussed more in their own scripts
+    public void GenerateRoom(ref int W, ref int H,ref Tiletype[,] roomArray, ref List<Region> regionList)
+    {
+        //load the text asset containing room data from the Resources folder
+        TextAsset txt = (TextAsset)Resources.Load("DungeonStartRoom", typeof(TextAsset));
+        //get all the lines, split by the endings
+        string[] fileLines = txt.text.Split('\n');
+        //split the initial line that contains the room W and H
+        List<String> lineStrings = new List<string>(fileLines[0].Split('_'));
+
+        //set them
+        W = Convert.ToInt32(lineStrings[0]);
+        H = Convert.ToInt32(lineStrings[1]);
+        width = W;
+        height = H;
+        originX = 0;
+        originY = 0;
+        roomArray = new Tiletype[W, H];
+
+        //set up the array tiles from the rest of lines each part of a line being separated by a "_"
+        for (int i = 1; i < fileLines.Length - 1; i++)
+        {
+            lineStrings = new List<string>(fileLines[i].Split('_'));
+            roomArray[Convert.ToInt32(lineStrings[0]), Convert.ToInt32(lineStrings[1])] = (Tiletype)Enum.Parse(typeof(Tiletype), lineStrings[2]);
+        }
+
+        //set up the region of the file based room
+        List<Position> regionTiles=new List<Position>();
+
+        for(int i=0; i<W; i++)
+        {
+            for(int j=0; j<H; j++)
+            {
+                regionTiles.Add(new Position(i, j));
+            }
+        }
+
+        regionList.Add(new Region(regionTiles, roomArray, W, H));
+
+        //room creation will be discussed in its specific files
     }
 }

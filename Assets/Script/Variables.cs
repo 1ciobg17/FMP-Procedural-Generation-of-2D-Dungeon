@@ -1,28 +1,29 @@
-﻿using System;
+﻿//Student Name: George Alexandru Ciobanita
+//Student ID: Q11598417
+//Project: FINAL MAJOR PROJECT CGP601
+//Classes & Variables: Tiletype, EntityType, Entity, Passage, Room, Position, Region, Section, IntRange
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
 //tile types used especially when creating the room array and drawing the rooms
+//noted: struct set up improper, noted in report
 [Serializable]
 public enum Tiletype
 {
     Wall, Floor, Connector, Entry, Null,
 }
 
-[Serializable]
-public enum RoomQuest
-{
-    DestroyOrbs, KillEnemies, Null,
-}
-
 //entities that can be found in a level
 [Serializable]
 public enum EntityType
 {
-    DungeonEntry, DungeonExit, MagicOrb, Enemy, Key, Null,
+    Null, DungeonEntry, DungeonExit, MagicOrb, Enemy, Key,
 }
 
+//entity struct
+//does not need to be a class as its existance is at a level that is not required any feedback
 [Serializable]
 public struct Entity
 {
@@ -91,6 +92,7 @@ public class Room
     [NonSerialized]
     public bool hasBeenVisited = false;
 
+    //default constructor
     public Room()
     {
 
@@ -104,6 +106,7 @@ public class Room
         originY = y;
         height = H;
         width = W;
+        //variables that need to be set up in order to be used 
         regionList = new List<Region>();
         regionList = regions;
         wallTiles = new List<Position>();
@@ -118,12 +121,14 @@ public class Room
         originY = y;
     }
 
+    //determine the wall tiles that are at the edge of a room
     public void DetermineEnclosingWall()
     {
         for (int x = 0; x < height; x++)
         {
             for (int y = 0; y < width; y++)
             {
+                //if the tile is a wall then check its surroundings and add it to the list
                 if (roomTiles[x, y] == Tiletype.Wall)
                 {
                     if ((y > 0) && roomTiles[x, y - 1] == Tiletype.Floor)
@@ -160,6 +165,8 @@ public class Room
         }
     }
 
+    //for gameplay purposes
+    //close the room off by calling its entry tiles
     public void CloseOffRoomExits()
     {
         foreach(GameObject tile in entryTiles)
@@ -169,6 +176,7 @@ public class Room
         }
     }
 
+    //open the rooms by calling its entry tiles
     public void OpenRoomExits()
     {
         foreach (GameObject tile in entryTiles)
@@ -177,6 +185,7 @@ public class Room
         }
     }
 
+    //pass this room as the parent room once its entry tiles have been assigned
     public void PassParentRoom()
     {
         foreach(GameObject tile in entryTiles)
@@ -185,6 +194,7 @@ public class Room
         }
     }
 
+    //neighbouring rooms connected to the current room
     public void AddNeighbours(Room room)
     {
         neighbouringRooms.Add(room);
@@ -262,12 +272,48 @@ public class Region : IComparable<Region>
                 for (int y = tile.tileY - 1; y <= tile.tileY + 1; y++)
                 {
                     //only tiles horizontally or vertically positioned, ignoring diagonal tiles
-                    if (x == tile.tileX || y == tile.tileY)
+                    if ((x == tile.tileX || y == tile.tileY))
                     {
                         //if any neighbouring tile is of wall type then it is an edge tile
                         if (map[x, y] == Tiletype.Floor)
                         {
                             edgeTiles.Add(tile);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //constructor for regions part of a room created from a text tile
+    public Region(List<Position> regionTiles, Tiletype[,] map, int mapW, int mapH)
+    {
+        //the region is the entirety of tiles that exist in the room
+        tiles = regionTiles;
+        regionSize = tiles.Count;
+        connectedRegions = new List<Region>();
+
+        //and the edge tiles are determined based on their position in the room
+        edgeTiles = new List<Position>();
+        for(int i=0; i<mapW; i++)
+        {
+            for(int j=0; j<mapH; j++)
+            {
+                if(map[i,j]==Tiletype.Floor)
+                {
+                    for (int x = i - 1; x <= i + 1; x++)
+                    {
+                        for (int y = j - 1; y <= j + 1; y++)
+                        {
+                            //only tiles horizontally or vertically positioned, ignoring diagonal tiles
+                            if ((x == i || y == j))
+                            {
+                                //if any neighbouring tile is of wall type then it is an edge tile
+                                if (map[x, y] == Tiletype.Floor)
+                                {
+                                    edgeTiles.Add(new Position(x,y));
+                                }
+                            }
                         }
                     }
                 }
@@ -366,20 +412,20 @@ public class Section
         bool splitHorizontally = ((randomNumberGeneration.Next(100) <= 50) ? true : false);
 
         //if this section was already split
-        if (leftSection!=null && rightSection!=null)
+        if (leftSection != null && rightSection != null)
         {
             return false;
         }
 
         //if the width is atleast 1/4 higher than the height then we force the split to be vertical
-        if(width+width/4>=height)
+        if (width + width / 4 >= height)
         {
             splitHorizontally = false;
         }
         else
         {
             //the opposite
-            if(height+height/4>=width)
+            if (height + height / 4 >= width)
             {
                 splitHorizontally = true;
             }
@@ -389,7 +435,7 @@ public class Section
         int max = (splitHorizontally ? height : width) - SectionSize;
 
         //if its not possible
-        if(max<SectionSize)
+        if (max < SectionSize)
         {
             return false;
         }
@@ -419,9 +465,9 @@ public class Section
     public List<Room> GetChildSectionRooms()
     {
         //create a list
-        List<Room> sectionRooms =new List<Room>();
+        List<Room> sectionRooms = new List<Room>();
         //add this sections room to the list
-        if (this.insideRoom!=null)
+        if (this.insideRoom != null)
         {
             sectionRooms.Add(this.insideRoom);
         }
@@ -429,11 +475,11 @@ public class Section
         {
             //if it doesn't actually have a room aka is not a final sections
             //go after its child sections
-            if(this.leftSection!=null)
+            if (this.leftSection != null)
             {
                 sectionRooms.AddRange(this.leftSection.GetChildSectionRooms());
             }
-            if(this.rightSection!=null)
+            if (this.rightSection != null)
             {
                 sectionRooms.AddRange(this.rightSection.GetChildSectionRooms());
             }
@@ -442,4 +488,24 @@ public class Section
         //return the list
         return sectionRooms;
     }
+}
+
+    [Serializable]
+    public class IntRange
+    {
+        public int m_Min;//min value
+        public int m_Max;//max value
+
+        //constructor
+        public IntRange(int min, int max)
+        {
+            m_Min = min;
+            m_Max = max;
+        }
+
+        //get random value from the range
+        public int Random()
+        {
+            return UnityEngine.Random.Range(m_Min, m_Max);
+        }
 }

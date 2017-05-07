@@ -1,46 +1,54 @@
-﻿using System.Collections;
+﻿//Student Name: George Alexandru Ciobanita
+//Student ID: Q11598417
+//Project: FINAL MAJOR PROJECT CGP601
+//Class: GameManager
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour {
 
+    //the rooms in the level that have passed creation
     List<Room> levelRooms;
+    //the gamepaths of the level starting from the rooms that have a single neighbour
     List<List<Room>> gamePaths;
+    //the longest path
     List<Room> victoryPath;
-    List<Room> tranversedPath;
+    //the entities that exist in the level
     List<Entity> levelEntities;
+    //the current room the player character is currently situated
     Room activeRoom;
-    List<Room> neighbouringRooms;
     public GraphicsManager graphicsManager;
     public GameObject characterObject;
     GameObject playerCharacter;
     
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             RestartLevel();
         }
     }
 
+    //the gamemanager only starts on its initial call from the level manager
     public void SetUpGameArea(List<Room> roomList)
     {
+        //set up the lists
         levelEntities = new List<Entity>();
         levelRooms = roomList;
         gamePaths = new List<List<Room>>();
-        tranversedPath = new List<Room>();
-        neighbouringRooms = new List<Room>();
         activeRoom = new Room();
+        //fill the list of game paths
         AcquireRoads();
+        //set up the entrances by picking the longest road from the list
         SetUpDungeonEntrances();
+        //set up the rest of the rooms
         SetUpDungeonRooms();
+        //pass level entity data
         graphicsManager.AcquireLevelEntityData(levelEntities);
+        //and start the drawing process
         graphicsManager.Draw();
     }
 
@@ -57,14 +65,17 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        //pick a random room from the list of single rooms and find its longest road starting with its neighbours
         FindAllRoads(singleRooms[randomNumberGeneration.Next(0, singleRooms.Count-1)], new Room(), new List<Room>());
     }
 
     void FindAllRoads(Room room, Room prevR, List<Room> roomPath)
     {
+        //date is passed
         Room currentRoom=GetRoom(room);
         Room prevRoom = prevR;
         List<Room> path = new List<Room>();
+        //if a path exists
         if(roomPath.Count>0)
         {
             foreach(Room pathR in roomPath)
@@ -72,12 +83,14 @@ public class GameManager : MonoBehaviour {
                 path.Add(pathR);
             }
         }
+ 
         bool check = true;
         bool addToPaths = true;
         while (check)
         {
             check = false;
             addToPaths = true;
+            //verify if this room is the first room in the list with a single neighbour
             if(path.Count==0 && currentRoom.neighbouringRooms.Count==1)
             {
                 path.Add(currentRoom);
@@ -87,16 +100,20 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
+                //if this is the last room
                 if(currentRoom.neighbouringRooms.Count==1)
                 {
                     path.Add(currentRoom);
                 }
                 else
                 {
+                    //if the room actually has two neighbours
                     if(currentRoom.neighbouringRooms.Count==2)
                     {
+                        //add current room to the path list
                         path.Add(currentRoom);
 
+                        //then determine which on of the neighbours is the new room to be added to the path list
                         if(prevRoom.originX!=currentRoom.neighbouringRooms[0].originX || prevRoom.originY!=currentRoom.neighbouringRooms[0].originY)
                         {
                             prevRoom = currentRoom;
@@ -116,10 +133,12 @@ public class GameManager : MonoBehaviour {
                     }
                     else
                     {
+                        //in rare cases that a room has 3 neighbours
                         if (currentRoom.neighbouringRooms.Count > 2)
                         {
                             path.Add(currentRoom);
                             addToPaths = false;
+                            //find the longest path starting from there using recursivity and note all paths in the list
                             if (prevRoom.originX != currentRoom.neighbouringRooms[0].originX || prevRoom.originY != currentRoom.neighbouringRooms[0].originY)
                             {
                                 FindAllRoads(currentRoom.neighbouringRooms[0], currentRoom, path);
@@ -144,6 +163,7 @@ public class GameManager : MonoBehaviour {
 
     Room GetRoom(Room room)
     {
+        //find the exact room to be added in the list
         for(int i=0; i<levelRooms.Count; i++)
         {
             if(room.originX==levelRooms[i].originX && room.originY==levelRooms[i].originY)
@@ -155,6 +175,7 @@ public class GameManager : MonoBehaviour {
         return null;
     }
 
+    //once the start and end rooms have been found, set up entrances/exits/key to open the exit
     void SetUpDungeonEntrances()
     {
         Entity dungeonEntry = new Entity();
@@ -166,6 +187,7 @@ public class GameManager : MonoBehaviour {
         List<Room> longestRoad = new List<Room>();
         List<Room> keyRoad = new List<Room>();
 
+        //find the longest road in the list in order to use its first and last room for entrance and exit
         for (int i = 0; i < gamePaths.Count; i++)
         {
             if (gamePaths[i].Count > biggestRoomCount)
@@ -176,12 +198,14 @@ public class GameManager : MonoBehaviour {
             }
             else
             {
+                //second longest path is the keyroad, if it exists
                 keyRoad = gamePaths[i];
             }
         }
 
         victoryPath = longestRoad;
 
+        //find the biggest region in the entrance room then place the entrytile in the middle of it
         for (int i = 0; i < victoryPath[0].regionList.Count; i++)
         {
             if (victoryPath[0].regionList[i].tiles.Count > tileCount)
@@ -191,6 +215,7 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        //entry tiles are then activated for gameplay
         foreach (GameObject entryTile in victoryPath[0].entryTiles)
         {
             entryTile.GetComponent<EntryTile>().DeactivateTrap();
@@ -199,6 +224,7 @@ public class GameManager : MonoBehaviour {
         levelEntities.Add(dungeonEntry);
         tileCount = 0;
 
+        //find the biggest region in the exit room then place the exittile in the middle of it
         for (int i = 0; i < victoryPath[victoryPath.Count - 1].regionList.Count; i++)
         {
             if (victoryPath[victoryPath.Count - 1].regionList[i].tiles.Count > tileCount)
@@ -217,13 +243,23 @@ public class GameManager : MonoBehaviour {
 
         tileCount = 0;
 
-        for (int i = 0; i < keyRoad[keyRoad.Count - 1].regionList.Count; i++)
+        //if there is another road besides the one used for the longest road
+        if (keyRoad.Count > 0)
         {
-            if (keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count > tileCount)
+            for (int i = 0; i < keyRoad[keyRoad.Count - 1].regionList.Count; i++)
             {
-                tileCount = keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count;
-                dungeonKey = new Entity(keyRoad[keyRoad.Count - 1].regionList[i].tiles[keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count / 2].tileX + keyRoad[keyRoad.Count - 1].originX, keyRoad[keyRoad.Count - 1].regionList[i].tiles[keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count / 2].tileY + keyRoad[keyRoad.Count - 1].originY, EntityType.Key, keyRoad[keyRoad.Count - 1]);
+                //use it to place the key, this is a shorter road
+                if (keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count > tileCount)
+                {
+                    tileCount = keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count;
+                    dungeonKey = new Entity(keyRoad[keyRoad.Count - 1].regionList[i].tiles[keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count / 2].tileX + keyRoad[keyRoad.Count - 1].originX, keyRoad[keyRoad.Count - 1].regionList[i].tiles[keyRoad[keyRoad.Count - 1].regionList[i].tiles.Count / 2].tileY + keyRoad[keyRoad.Count - 1].originY, EntityType.Key, keyRoad[keyRoad.Count - 1]);
+                }
             }
+        }
+        else
+        {
+            //else the key is in the same room as the exit
+            dungeonKey = new Entity(dungeonExit.originX, dungeonExit.originY, EntityType.Key, dungeonExit.parentRoom);
         }
 
         levelEntities.Add(dungeonKey);
@@ -233,18 +269,16 @@ public class GameManager : MonoBehaviour {
 
     void PlacePlayerCharacter(Vector3 dungeonEntry)
     {
+        //the position if the entrance tile is used
         characterObject.transform.position = new Vector3(dungeonEntry.x, dungeonEntry.y);
         playerCharacter=GameObject.Instantiate(characterObject) as GameObject;
+        //current room the player is in
         activeRoom = victoryPath[0];
         activeRoom.hasBeenVisited = true;
         playerCharacter.GetComponent<PlayerCharacter>().SetLevelLocation(activeRoom);
-        tranversedPath.Add(activeRoom);
-        foreach (Room room in activeRoom.neighbouringRooms)
-        {
-            neighbouringRooms.Add(room);
-        }
     }
 
+    //the other rooms in the level get either spikes of magic orbs as room objectives to get the rooms open
     void SetUpDungeonRooms()
     {
         foreach(Room room in levelRooms)
@@ -262,6 +296,7 @@ public class GameManager : MonoBehaviour {
         int regionSize = 0;
         Region targetRegion;
 
+        //one or the other
         System.Random rng = new System.Random();
         int objective = rng.Next((int)EntityType.MagicOrb, (int)EntityType.Enemy+1);
         if((int)levelEntities[levelEntities.Count-1].entityType==objective)
@@ -270,11 +305,13 @@ public class GameManager : MonoBehaviour {
             {
                 while(objective==(int)levelEntities[levelEntities.Count-1].entityType)
                 {
+                    //but if the same objective has been used the last few times then try to change it again
                     objective = rng.Next((int)EntityType.MagicOrb, (int)EntityType.Enemy + 1);
                 }
             }
         }
 
+        //place the enemy in the biggest region in the room similar to the entrance/exit
         if (objective == (int)EntityType.Enemy)
         {
             targetRegion = room.regionList[0];
@@ -291,6 +328,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+            //similar to the orbs
             targetRegion = room.regionList[0];
             for (int i = 0; i < room.regionList.Count; i++)
             {
@@ -305,6 +343,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    //reload the scene
     public void RestartLevel()
     {
         StartCoroutine(SceneLoadDelay());

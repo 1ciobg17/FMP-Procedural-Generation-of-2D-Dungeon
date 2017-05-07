@@ -1,26 +1,38 @@
-﻿using System.Collections;
+﻿//Student Name: George Alexandru Ciobanita
+//Student ID: Q11598417
+//Project: FINAL MAJOR PROJECT CGP601
+//Class: PlayerCharacter
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
 
+    //movement speed of the character
     public float characterSpeed=0.1f;
+    //sprites specific to directional movement to signal this to the user
     public Sprite horizontalMovement;
     public Sprite verticalMovement;
     public Sprite horizontalAttack;
     public Sprite verticalAttack;
     public Sprite idle;
+    //text to display leve completion
     public GameObject uiText;
+    //components of the object
     SpriteRenderer characterSpriteRenderer;
     Rigidbody2D characterRB;
+    //collider for the character attack
     CircleCollider2D attackCollider;
+    //set the position of the character relative to its movement
     bool horizontalPositioning = false;
+    //key is required for level completion
     bool hasKey=false;
+    //current room location in the level
     Room levelLocation;
     Vector2 prevVelocity;
 
 
-	// Use this for initialization
+	//set up the components
 	void Start () {
         characterSpriteRenderer = this.GetComponent<SpriteRenderer>();
         characterRB=this.GetComponent<Rigidbody2D>();
@@ -36,20 +48,26 @@ public class PlayerCharacter : MonoBehaviour {
         CharacterMovement(h, v);
     }
 
+    //character movement to be either horizontal or vertical but never diagonal
     void CharacterMovement(float horizontal, float vertical)
     {
 
         if (vertical != 0f)
         {
+            //no horizontal movement
             horizontal = 0f;
+            //new movement vector
             Vector3 movement = new Vector3(horizontal, vertical, 0);
+            //set the velocity
             characterRB.velocity = movement * characterSpeed;
+            //and store the previous one
             prevVelocity = characterRB.velocity;
             return;
         }
 
         if (horizontal != 0f)
         {
+            //no vertical movement
             vertical = 0f;
             Vector3 movement = new Vector3(horizontal, vertical, 0);
             characterRB.velocity = movement * characterSpeed;
@@ -59,11 +77,13 @@ public class PlayerCharacter : MonoBehaviour {
         }
         else
         {
+            //no input at all->no movement
             Vector3 noMovement = new Vector3(0, 0, 0);
             characterRB.velocity = noMovement;
         }
     }
 
+    //controls determine what sprite is used, and its rotation, and set up the directional position bool
     void Controls()
     {
         if ((Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0) && (Input.GetAxis("Vertical")==0))
@@ -84,9 +104,11 @@ public class PlayerCharacter : MonoBehaviour {
             }
             else
             {
+                //if the player attacks
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
                     attackCollider.enabled = true;
+                    //depending on the characters position the collision box for the attack will be moved to the location represented in its attack sprites
                     if(horizontalPositioning)
                     {
                         characterSpriteRenderer.sprite = horizontalAttack;
@@ -140,6 +162,7 @@ public class PlayerCharacter : MonoBehaviour {
     {
         if(collision.gameObject.tag=="Key")
         {
+            //get the key
             hasKey = true;
             collision.gameObject.SetActive(false);
         }
