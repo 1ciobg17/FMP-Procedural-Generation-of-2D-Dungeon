@@ -76,8 +76,6 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-
-            //CreateSectionRoomFromFile(section);
             //take section values/position into consideration
             int xPos;
             int yPos;

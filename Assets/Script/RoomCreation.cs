@@ -147,12 +147,12 @@ public class RoomCreation : MonoBehaviour
                         Position tileA = regionA.edgeTiles[tileIndexA];
                         Position tileB = regionB.edgeTiles[tileIndexB];
                         //calculate the distance between them
-                        int distanceBetweenRooms = (int)(Mathf.Pow(tileA.tileX - tileB.tileX, 2) + Mathf.Pow(tileA.tileY - tileB.tileY, 2));
+                        int distanceBetweenRegions = (int)(Mathf.Pow(tileA.tileX - tileB.tileX, 2) + Mathf.Pow(tileA.tileY - tileB.tileY, 2));
 
                         //find the best distance from existing one or just make a connection if none has been found yet
-                        if (distanceBetweenRooms < bestDistance || !possibleConnectionFound)
+                        if (distanceBetweenRegions < bestDistance || !possibleConnectionFound)
                         {
-                            bestDistance = distanceBetweenRooms;
+                            bestDistance = distanceBetweenRegions;
                             possibleConnectionFound = true;
                             //add best cases 
                             bestTileA = tileA;
@@ -497,20 +497,20 @@ public class RoomCreation : MonoBehaviour
     }
 
     //function used mainly for smoothing, requires starting coordinates of tile to check around
-    int GetSurroundingWallCount(int gridX, int gridY, Tiletype[,] roomArray)
+    int GetSurroundingWallCount(int arrayX, int arrayY, Tiletype[,] roomArray)
     {
         //wall count, initially 0
         int wallCount = 0;
         //check around the tile
-        for (int neighbourX = gridX - 1; neighbourX <= gridX + 1; neighbourX++)
+        for (int neighbourX = arrayX - 1; neighbourX <= arrayX + 1; neighbourX++)
         {
-            for (int neighbourY = gridY - 1; neighbourY <= gridY + 1; neighbourY++)
+            for (int neighbourY = arrayY - 1; neighbourY <= arrayY + 1; neighbourY++)
             {
                 //if the tile is in the room bounds
                 if (IsInRoomRange(neighbourX, neighbourY))
                 {
                     //and the tile is not the same as the initial tile being checked around of
-                    if (neighbourX != gridX || neighbourY != gridY)
+                    if (neighbourX != arrayX || neighbourY != arrayY)
                     {
                         //wall count increases
                         wallCount += (int)roomArray[neighbourX, neighbourY];
